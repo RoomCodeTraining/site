@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-to-r from-white from-10% via-green-100 via-40% to-indigo-100 to-100% text-white px-64 py-32">
+    <div class="bg-gradient-to-r from-green-200 from-30% via-white-200 via-50% to-green-50 to-70% text-white px-64 py-32">
         <div class="flex justify-between items-center py-4">
             <div class="w-1/2 pr-8">
                 <h1 id="animated-text" class="text-4xl font-bold text-green-800">
@@ -14,12 +14,12 @@
                     et à inspirer la prochaine génération de développeurs web.</p>
             </div>
             <div class="w-1/2">
-                <img src="https://th.bing.com/th/id/OIP.NeZ-swzEsZc7hNJGH_J0awHaDt?w=306&h=175&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                <img src="https://blog.freec.asia/wp-content/uploads/2020/11/lap-trinh-nhung-la-gi-01-1.jpg"
                     alt="hero" class="w-full h-auto image-with-transition">
             </div>
         </div>
         <div class="-mt-24 flex-1 justify-between">
-            <button type="button"
+            <a type="button" href="https://github.com/roomdada" target="_blank"
                 class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2">
                 <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     viewBox="0 0 20 20">
@@ -28,17 +28,17 @@
                         clip-rule="evenodd" />
                 </svg>
                 Acceder à mon Github
-            </button>
-            <button type="button"
-                class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
-                <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                    viewBox="0 0 18 19">
-                    <path fill-rule="evenodd"
-                        d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z"
-                        clip-rule="evenodd" />
+            </a>
+            <a type="button" href="https://www.linkedin.com/in/da-sie-roger-889289192/" target="_blank"
+                class="text-white bg-[#366ec7] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 me-2" viewBox="0 0 20 20"
+                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                    <path
+                        d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z">
+                    </path>
                 </svg>
                 Acceder à mon Linkedin
-            </button>
+            </a>
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-16 bg-white"
             style="border-bottom-left-radius: 50% 20px; border-bottom-right-radius: 50% 20px;"></div>
