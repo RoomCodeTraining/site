@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-to-r from-white from-10% via-green-100 via-50% to-white-100 to-100% text-white px-64 py-32">
+    <div class="bg-gradient-to-r from-white from-10% via-green-100 via-40% to-indigo-100 to-100% text-white px-64 py-32">
         <div class="flex justify-between items-center py-4">
             <div class="w-1/2 pr-8">
                 <h1 id="animated-text" class="text-4xl font-bold text-green-800">
