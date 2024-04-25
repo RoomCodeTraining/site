@@ -8,10 +8,10 @@
                 <hr class='w-full -mt-5 ml-32  border-t border-dashed border-green-400 my-6'>
             </div>
         </div>
-        <div class="md:w-2/3 bg-white px-6 py-4 shadow-lg rounded-lg border-1">
+        <div class="md:w-2/3 bg-white px-6 py-4 shadow-lg rounded-lg border-b-2  border-green-500">
             <h3 class="text-xl font-bold mb-2">{{ props.title }}</h3>
-            <p class="text-gray-600">{{ props.school }}</p>
-            <p>{{ props.description }}</p>
+            <p class="text-gray-600 font-semibold  mb-4">{{ props.school }}</p>
+            <p class="text-justify">{{ props.description }}</p>
         </div>
     </div>
     </template>
@@ -21,5 +21,6 @@
             title: String,
             school: String,
             description: String,
+            inProgress : String
         })
     </script>

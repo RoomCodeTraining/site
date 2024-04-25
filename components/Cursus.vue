@@ -2,7 +2,8 @@
     <div class="container mx-auto px-8 py-12">
         <div class="relative">
             <!-- <div class="border-2 border-gray-400 absolute h-full border-r-0 top-0" style="left: 50%;"></div> -->
-
+            <CursusStep inProgress='true' year="En cours" title="MASTER en Management Digital des SI(MDSI)" school="ESATIC"
+            description="Actuellement en Master en Management Digital des Systèmes d'Information (MDSI), je me forme pour devenir un professionnel capable de relever les défis de la transformation numérique des entreprises. Ce programme combine des enseignements avancés en management et en technologies de l'information avec des projets concrets axés sur l'innovation et la stratégie digitale. Mon parcours comprend une expertise en gestion de projets numériques, analyse des données, sécurité informatique et stratégie de transformation digitale. Mon projet de mémoire approfondit mes connaissances et vise à contribuer au domaine d'étude. Ce Master me prépare à devenir un leader dans le management des systèmes d'information, capable de proposer des solutions innovantes pour créer de la valeur ajoutée pour les entreprises." />
             <CursusStep year="2018 - 2022"
                          title="License en Méthode Informatique Appliquée a la Gestion des Entreprises(MIAGE)"
                           school="Université Polytechnique de Bingerville"
