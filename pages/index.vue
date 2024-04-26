@@ -8,5 +8,13 @@
             <Cursus />
         </div>
         <Experience />
+        <Realisation />
     </div>
 </template>
+<style>
+    body {
+       font-family: "Platypi", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+    }
+</style>
