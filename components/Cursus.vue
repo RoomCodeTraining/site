@@ -8,8 +8,11 @@
                          title="License en Méthode Informatique Appliquée a la Gestion des Entreprises(MIAGE)"
                           school="Université Polytechnique de Bingerville"
                          description="J'ai obtenu ma Licence en Méthode Informatique Appliquée à la Gestion des Entreprises (MIAGE) en réalisant un projet appelé Papillon Routier. Ce projet visait à faciliter la gestion des contraventions routières en Côte d'Ivoire, en intégrant une analyse de données pour prendre des décisions visant à réduire les accidents. Cette expérience pratique m'a permis d'appliquer mes connaissances en développement logiciel et en gestion de bases de données dans un contexte réel." />
-            <CursusStep year="2015 - 2018" title="BAC D" school="Lycée Classique Abidjan" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui nesciunt laudantium magnam ad eligendi delectus, nulla, accusamus non perferendis sunt tempore, provident fugiat et temporibus earum cumque beatae commodi velit?" />
-            <CursusStep year="2012 - 2015" title="BEPC" school="Lycée Moderne de Koumassi" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui nesciunt laudantium magnam ad eligendi delectus, nulla, accusamus non perferendis sunt tempore, provident fugiat et temporibus earum cumque beatae commodi velit?" />
+            <CursusStep year="2015 - 2018" title="BAC D"
+                 school="Lycée Classique Abidjan"
+                  description="J'ai obtenu mon Baccalauréat Scientifique (BAC D) avec la mention Assez Bien au Lycée Classique d'Abidjan. Cette formation m'a offert une solide base en sciences et mathématiques, ainsi qu'une rigueur intellectuelle essentielle pour la suite de mes études. Cette période a été marquée par un apprentissage approfondi et une préparation aux défis académiques et professionnels à venir." />
+            <CursusStep year="2012 - 2015" title="BEPC" school="Lycée Moderne de Koumassi"
+                         description="Mon parcours académique a débuté au Lycée Moderne de Koumassi, où j'ai obtenu avec succès mon Brevet Élémentaire de Premier Cycle. Cette étape a posé les bases de ma formation en m'offrant une éducation polyvalente et en développant mes compétences académiques." />
 
         </div>
     </div>

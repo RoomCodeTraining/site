@@ -11,7 +11,7 @@
             <p class="text-gray-600 mt-4 text-sm lg:text-xl md:text-md text-justify">Je suis passionné par la création d'expériences web exceptionnelles. Avec une solide expérience en développement web, je mets mes compétences au service de la réalisation de projets innovants. En tant que formateur, j'aspire à partager mes connaissances et à inspirer la prochaine génération de développeurs web.</p>
         </div>
         <div class="hidden md:block md:w-1/2">
-            <img src="https://blog.freec.asia/wp-content/uploads/2020/11/lap-trinh-nhung-la-gi-01-1.jpg" alt="hero" class="w-full h-auto image-with-transition">
+            <img src="https://media.licdn.com/dms/image/D4E03AQEYTLFCHx2Irw/profile-displayphoto-shrink_800_800/0/1690817812685?e=1719446400&v=beta&t=VDBg_Bh_Ex1FydRklgB30QOT5PbE0HSZsxFhGtKh28E" alt="hero" class="w-full h-auto image-with-transition" style="object-fit: contain;">
         </div>
     </div>
     <div class="text-center lg:text-left lg:-mt-16">
@@ -28,7 +28,6 @@
             Mon Linkedin
         </a>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-white" style="border-bottom-left-radius: 50% 20px; border-bottom-right-radius: 50% 20px;"></div>
 </div>
 </template>
 <style scope>
