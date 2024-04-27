@@ -1,5 +1,5 @@
 <template>
-<div class="w-full md:w-100 bg-white px-2 py-4 shadow-lg rounded-lg border-1 hover:border-2 hover:border-green-500">
+<div class="w-full mx-auto  bg-white px-2 py-4 shadow-lg rounded-lg border-1 hover:border-2 hover:border-green-500">
     <h3 class="text-md lg:text-xl font-bold mb-2">{{ props.post }} chez  {{ props.company }}</h3>
     <p class="text-black mb-2 text-justify">
         {{ props.description }}

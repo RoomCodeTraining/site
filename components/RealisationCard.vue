@@ -1,15 +1,15 @@
 <template>
 <div>
-      <div
-        class="w-auto md:w-100  p-4 rounded-lg shadow-lg border-2 project-card hover:border-green-500 hover:-translate-y-1 hover:shadow-2xl">
-        <span class="block font-bold text-green-500 mb-2">{{ props.type }}</span>
-        <h1 class="text-xl font-bold mb-1">{{ props.title }}</h1>
-        <p class="text-gray-700 text-justify">{{ props.description }}</p>
-        <div class="flex justify-between mt-4">
-          <span class="text-gray-600 font-semibold ">Technologies: </span>
-          <span class="text-gray-600 font-semibold">JS</span>
-        </div>
+    <div class="w-full h-auto p-4 rounded-lg shadow-lg border-2 project-card hover:border-green-500 hover:-translate-y-2 hover:shadow-2xl">
+    <span class="block font-bold text-green-500 mb-2">{{ props.type }}</span>
+    <h1 class="text-xl font-bold mb-1">{{ props.title }}</h1>
+    <p class="text-gray-700 text-justify">{{ props.description }}</p>
+    <div class="flex justify-between mt-4">
+        <span class="text-gray-600 font-semibold">Technologies: </span>
+        <span class="text-gray-600 font-semibold">JS</span>
     </div>
+</div>
+
 </div>
 </template>
 <script setup>

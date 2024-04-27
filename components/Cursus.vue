@@ -1,5 +1,5 @@
 <<template>
-    <div class="container px-8 py-12 ">
+    <div class="container px-8 py-12">
         <div class="relative">
             <!-- <div class="border-2 border-gray-400 absolute h-full border-r-0 top-0" style="left: 50%;"></div> -->
             <CursusStep inProgress='true' year="En cours" title="MASTER en Management Digital des SI(MDSI)" school="ESATIC"

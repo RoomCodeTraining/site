@@ -6,7 +6,16 @@ export default defineNuxtConfig({
     ],
    app: {
     head: {
-      title : "Roomdada - My personal website",
+      title : "Da Sié Roger - Mon site web personnel",
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: "Je suis un développeur web et mobile, passionné par la programmation, la technologie et le design. Je suis également un grand amateur de musique, de cinéma et de jeux vidéo. J'aime apprendre de nouvelles choses et partager mes connaissances avec les autres." },
+        { hid: 'og:title', property: 'og:title', content: 'Da Sié Roger - Mon site web personnel' },
+        { hid: 'og:description', property: 'og:description', content: "Je suis un développeur web et mobile, passionné par la programmation, la technologie et le design. Je suis également un grand amateur de musique, de cinéma et de jeux vidéo. J'aime apprendre de nouvelles choses et partager mes connaissances avec les autres." },
+        { hid: 'og:image', property: 'og:image', content: 'https://dasiemedia.com/images/og-image.jpg' },
+        { hid: 'og:url', property: 'og:url', content: 'https://me.roomcodetraining.com' },
+      ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
