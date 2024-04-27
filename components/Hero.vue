@@ -1,5 +1,5 @@
 <template>
-<div class="bg-gradient-to-r from-green-200 via-white-200 to-green-50 text-white px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-24">
+<div class="bg-gradient-to-r from-green-100 via-white-100 to-green-200 text-white px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-24">
     <div class="flex flex-col md:flex-row justify-between items-center py-4">
         <div class="w-full md:w-1/2 pr-8">
             <h1 class="text-xl md:text-4xl lg:text-5xl font-bold text-green-800 mb-2">

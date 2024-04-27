@@ -1,5 +1,5 @@
 <template>
-    <div class="py-6 mt-8 rounded-lg" id="experiences">
+    <div class="py-6 mt-8 rounded-lg lg:mx-32" id="experiences">
         <h2 class="text-xl lg:text-4xl font-bold mb-2">Mes Experiences professionnelles</h2>
         <div class="h-1 w-20 bg-green-500"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-8">
