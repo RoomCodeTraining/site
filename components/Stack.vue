@@ -1,5 +1,5 @@
 <template>
-    <div class="px-8 py-6 rounded-lg lg:mx-32" id="realisations">
+    <div class="px-8 py-6 rounded-lg lg:mx-32 bg-scribble" id="realisations">
         <h2 class="text-4xl font-bold mb-2">Outils & technologies</h2>
         <div class="h-1 w-20 bg-green-500"></div>
         <section class="relative bg-white">
@@ -16,7 +16,7 @@
                         Node.js. J'ai une bonne connaissance avec les technologies front-end comme Vue.js, React.js, NuxtJS, Git, Github, Nest, MySql Cleavr...
                     </p>
                 </div>
-                <img src="~/assets/images/laravel.png" alt="laravel" class="w-80 h-80 mx-auto object-contain lg:-mt-12 border-2 px-6 rounded-md hover:h-100" />
+                <img src="~/assets/images/laravel.png" alt="laravel" class="w-80 h-80 mx-auto hover:rotate-120 transition ease-in-out object-contain lg:-mt-12 border-2 px-6 rounded-md hover:h-100" />
             </div>
             <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-8">
                 <div class="px-4 border-2 py-4">
@@ -60,4 +60,7 @@
         </section>
     </div>
 </template>
+<style>
+
+</style>
 <script setup></script>

@@ -1,5 +1,5 @@
 <template>
-<div class="bg-gradient-to-r from-green-100 via-white-100 to-green-200 text-white px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-24">
+<div class="bg-gradient-to-b from-white via-green-100 to-green-200  text-white px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-24">
     <div class="flex flex-col md:flex-row justify-between items-center py-4">
         <div class="w-full md:w-1/2 pr-8">
             <h1 class="text-xl md:text-4xl lg:text-5xl font-bold text-green-800 mb-2">
@@ -8,7 +8,8 @@
             <h2 class="text-lg md:text-xl lg:mt-0 ml-5 font-bold text-green-800">
                 Developpeur & Formateur
             </h2>
-            <p class="text-gray-600 mt-4 text-sm lg:text-xl md:text-md text-justify">Je suis passionné par la création d'expériences web exceptionnelles. Avec une solide expérience en développement web, je mets mes compétences au service de la réalisation de projets innovants. En tant que formateur, j'aspire à partager mes connaissances et à inspirer la prochaine génération de développeurs web.</p>
+            <p class="text-gray-600 mt-4 text-sm lg:text-xl md:text-md text-justify">
+                Je suis passionné par la création d'expériences web exceptionnelles. Avec une solide expérience en développement web, je mets mes compétences au service de la réalisation de projets innovants. En tant que formateur, j'aspire à partager mes connaissances et à inspirer la prochaine génération de développeurs web.</p>
         </div>
         <div class="hidden md:block md:w-1/2">
             <img src="https://media.licdn.com/dms/image/D4E03AQEYTLFCHx2Irw/profile-displayphoto-shrink_800_800/0/1690817812685?e=1719446400&v=beta&t=VDBg_Bh_Ex1FydRklgB30QOT5PbE0HSZsxFhGtKh28E" alt="hero" class="w-full h-auto image-with-transition" style="object-fit: contain;">
