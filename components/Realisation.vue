@@ -12,6 +12,7 @@
     </div>
 </template>
 <script setup>
+
  const realisations = [
     {
       id: 1,
@@ -34,6 +35,26 @@
       description: "Réalisation du site web du cabinet YOBSAJ, cabinet d'expertise juridique en cote d'ivoire'.",
       technologies : ['HTML', 'CSS', 'JS', 'TailwindCSS']
     },
-
+    {
+      id: 4,
+      type : "Fullstack",
+      title : "Cantine Management",
+      description : "Application de gestion de cantine pour entreprise. Cette application permet de gerer les repas des employés d'une entreprise, la facturation et la gestion des commandes.",
+      technologies : ['PHP', 'Laravel', 'MySQL', 'JS', 'TailwindCSS', 'AlpineJS', 'Livewire']
+    },
+    {
+      id : 5,
+      type : "Fullstack",
+      title : "Asa-controller",
+      description : "Asa-controller est une plateforme de gestion des verifications de la validité des assurances automobiles en Cote d'Ivoire.",
+      technologies : ['PHP', 'Laravel', 'TailwindCSS', 'AlpineJS', 'Livewire', 'MySQL', 'JS']
+    },
+    {
+      id: 6,
+      type: "frontend",
+      title : "Site ASACI",
+      description : 'Réalisation de la refonte du site de l\'Association des Sociétés d\'Assurances de Côte d\'Ivoire(ASACI)',
+      technologies : ['HTML', 'CSS', 'JS', 'TailwindCSS']
+    }
   ];
 </script>
