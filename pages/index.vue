@@ -9,6 +9,7 @@
         </div>
         <Experience />
         <Realisation />
+        <Stack />
     </div>
     <Footer />
 </template>
