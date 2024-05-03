@@ -5,8 +5,11 @@
     <h1 class="text-xl font-bold mb-1">{{ props.title }}</h1>
     <p class="text-gray-700 text-justify">{{ props.description }}</p>
     <div class="flex justify-between mt-4">
-        <span class="text-gray-600 font-semibold">Technologies: </span>
-        <span class="text-gray-600 font-semibold">JS</span>
+        <span class="text-gray-600 font-semibold">Stack: </span>
+        <div class="space-x-1">
+            <span v-for="technology in props.technologies" :key="technology"
+               class="text-gray-600 font-semibold rounded-md  border-2 border-gray-500 px-1">{{ technology }}</span>
+        </div>
     </div>
 </div>
 
