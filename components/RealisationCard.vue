@@ -2,6 +2,7 @@
 <div class="">
     <div class="w-full h-auto p-4 rounded-lg shadow-lg border-2 project-card hover:border-green-500 hover:-translate-y-2 hover:shadow-2xl">
     <span class="block font-bold text-green-500 mb-2">{{ props.type }}</span>
+     <img :src="props.image" alt="realisation" class="w-full h-48 object-cover rounded-lg">
     <h1 class="text-xl font-bold mb-1">{{ props.title }}</h1>
     <p class="text-gray-700 text-justify">{{ props.description }}</p>
     <div class="flex justify-between mt-4">
@@ -12,7 +13,6 @@
         </div>
     </div>
 </div>
-
 </div>
 </template>
 <script setup>
@@ -20,16 +20,16 @@
     type: String,
     title: String,
     description: String,
-    technologies: Array
+    technologies: Array,
+    image: String
   });
 
   onMounted(() => {
-    console.log(props.technologies);
+    console.log(props.image);
   });
 </script>
 <style scoped>
 .project-card {
-  /* height: auto; Hauteur fixe pour toutes les cartes */
   transition: all 0.5s ease;
 }
 
