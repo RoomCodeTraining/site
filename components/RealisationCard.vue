@@ -1,32 +1,29 @@
 <template>
 <div class="">
     <div class="w-full h-auto p-4 rounded-lg shadow-lg border-2 project-card hover:border-green-500 hover:-translate-y-2 hover:shadow-2xl">
-    <span class="block font-bold text-green-500 mb-2">{{ props.type }}</span>
-     <img :src="props.image" alt="realisation" class="w-full h-48 object-cover rounded-lg">
-    <h1 class="text-xl font-bold mb-1">{{ props.title }}</h1>
-    <p class="text-gray-700 text-justify">{{ props.description }}</p>
+    <span class="block font-bold text-green-500 mb-2">{{ props.realisation.type }}</span>
+     <img :src="props.realisation.image" alt="realisation" class="w-full h-48 object-cover rounded-lg">
+    <h1 class="text-xl font-bold mb-1">{{ props.realisation.title }}</h1>
+    <p class="text-gray-700 text-justify">{{ props.realisation.description }}</p>
     <div class="flex justify-between mt-4">
         <span class="text-gray-600 font-semibold">Stack: </span>
         <div class="space-x-1">
-            <span v-for="technology in props.technologies" :key="technology"
+            <span v-for="technology in props.realisation.technologies" :key="technology"
                class="text-gray-600 font-semibold rounded-md  border-2 border-gray-500 px-1">{{ technology }}</span>
         </div>
     </div>
 </div>
 </div>
 </template>
-<script setup>
-  const props = defineProps({
-    type: String,
-    title: String,
-    description: String,
-    technologies: Array,
-    image: String
-  });
+<script setup lang="ts">
+import type { Realisation } from '~/types/realisation'
 
-  onMounted(() => {
-    console.log(props.image);
-  });
+ const props = defineProps({
+    realisation: {
+       type :Object as () => Realisation,
+        required: true
+    },
+  })
 </script>
 <style scoped>
 .project-card {

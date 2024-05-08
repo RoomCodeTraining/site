@@ -17,12 +17,11 @@
                         aussi une expérience avec NestJS et Cleavr.
                     </p>
                 </div>
-               <img src="~/assets/images/laravel.png" alt="laravel"
-    class="w-80 h-80 mx-auto transition-transform transform hover:rotate-45 hover:scale-105 object-contain lg:-mt-12 px-6 rounded-md hover:h-100" />
-
+                <img src="~/assets/images/laravel.png" alt="laravel"
+                    class="w-80 h-80 mx-auto transition-transform transform hover:rotate-45 hover:scale-105 object-contain lg:-mt-12 px-6 rounded-md hover:h-100" />
             </div>
             <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-8">
-                <div class="px-4 border-2 py-4">
+                <div class="px-4 border-2 py-4" >
                     <img src="~/assets/images/symfony.png" alt="laravel" class="w-20 h-20 mx-auto object-contain" />
                 </div>
                 <div class="px-4 border-2 py-4">

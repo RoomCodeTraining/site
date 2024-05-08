@@ -3,8 +3,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
       '@nuxtjs/tailwindcss',
-      '@nuxt/image'
+      '@nuxt/image',
+       '@pinia/nuxt',
     ],
+   pinia: {
+    storesDirs: ['./stores/**'],
+  },
    app: {
     head: {
       title : "Da Sié Roger - Mon site web personnel",

@@ -29,7 +29,7 @@
             id: 1,
             year: '2021-maintenant',
             post: "Technicien d'exploitation & Developpeur",
-            company: "ASACI TECHNOLOGIES",
+            company: "ASACI TECHS",
             description: "En tant que technicien d'exploitation, je suis en charge de la maintenance des serveurs et des applications. En tant que développeur, je participe à la réalisation de projets innovants.",
         },
         {
