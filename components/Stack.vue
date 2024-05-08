@@ -6,17 +6,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 <div class="">
                     <p class="text-justify font-normal lg:mt-8">
-                        En tant que développeur full-stack, je suis spécialisé dans le stack TaLL (Tailwind, Alpine,
-                        Laravel, Livewire). Ce choix de technologie me permet de créer des applications web efficaces et
-                        modernes, en combinant la simplicité de Tailwind CSS, la réactivité d'Alpine.js, la robustesse
-                        de Laravel et la facilité de développement de Livewire.
-                        J'ai une solide expérience dans le développement d'applications web avec Laravel, que ce soit
-                        pour la création de sites web complexes, d'API RESTful ou d'applications SPA.J'ai également
-                        travaillé avec Adonis.js, offrant une alternative puissante pour le développement back-end avec
-                        Node.js. J'ai une bonne connaissance avec les technologies front-end comme Vue.js, React.js, NuxtJS, Git, Github, Nest, MySql Cleavr...
+                        En tant que développeur full-stack, je me spécialise dans le stack TaLL (Tailwind, Alpine,
+                        Laravel, Livewire) pour créer des applications web modernes et efficaces. Avec Tailwind CSS,
+                        Alpine.js, Laravel et Livewire, je construis des solutions web innovantes.
+                        Mon expertise se concentre sur le développement avec Laravel, que ce soit pour des sites web
+                        complexes, des API RESTful ou des applications SPA. J'ai également travaillé avec Adonis.js pour
+                        le développement back-end avec Node.js.
+                        Côté front-end, je maîtrise Vue.js, React.js et Nuxt.js. J'utilise également Git et GitHub pour
+                        le contrôle de version, et j'ai une bonne connaissance des bases de données comme MySQL. J'ai
+                        aussi une expérience avec NestJS et Cleavr.
                     </p>
                 </div>
-                <img src="~/assets/images/laravel.png" alt="laravel" class="w-80 h-80 mx-auto hover:rotate-120 transition ease-in-out object-contain lg:-mt-12 border-2 px-6 rounded-md hover:h-100" />
+               <img src="~/assets/images/laravel.png" alt="laravel"
+    class="w-80 h-80 mx-auto transition-transform transform hover:rotate-45 hover:scale-105 object-contain lg:-mt-12 px-6 rounded-md hover:h-100" />
+
             </div>
             <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-8">
                 <div class="px-4 border-2 py-4">
