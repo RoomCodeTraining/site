@@ -9,7 +9,7 @@
             </div>
             <div class='lg:mt-24 justify-justify space-y-4 px-0'>
                 <div>
-                    <h1 class="text-md uppercase font-bold mb-1">Master en Management Digital des Système d'Information</h1>
+                    <h1 class="text-md uppercase font-bold mb-1">Master en Management Digital des Systèmes d'Informations</h1>
                     <p class="text-gray-700 text-justify">
                         Actuellement en Master en Management Digital des Systèmes d'Information (MDSI), je me forme pour
                         devenir un professionnel capable de relever les défis de la transformation numérique des
