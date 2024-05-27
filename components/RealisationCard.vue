@@ -12,6 +12,9 @@
                class="text-gray-600 font-semibold rounded-md  border-2 border-gray-500 px-1">{{ technology }}</span>
         </div>
     </div>
+    <!-- <div class='mt-4 hover:block'>
+      <button class='bg-green-300 w-full p-2 rounded-sm text-center text-white uppercase font-extrabold'>Consulter</button>
+    </div> -->
 </div>
 </div>
 </template>

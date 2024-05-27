@@ -57,28 +57,4 @@ export const useRealisation = () => useState<Realisation[]>('realisations', () =
             technologies: ['HTML', 'TailwindCss'],
             image: asaci
         },
-        {
-            id: 7,
-            type: "Backend",
-            title: "NodeJs API",
-            description: "Petite application nodeJS pour la creation de ticket",
-            technologies: ['NodeJS', 'MySQL'],
-            image: ahio
-        },
-        {
-            id: 8,
-            type: "Frontend",
-            title: "Module de commentaire",
-            description: "Mise en place d'un module de commentaire pour un blog",
-            technologies: ['JS', 'VueJs', 'TailwindCss'],
-            image: ahio
-        },
-        {
-            id: 9,
-            type: "Fullstack",
-            title: "Larapass",
-            description: "Création d'un clone de Samapass, une application de billerterie en ligne",
-            technologies: ['Laravel', 'MySQL', 'JS'],
-            image: larapass
-        }
 ]);

@@ -1,11 +1,11 @@
 <template>
     <div class="px-8 py-6 rounded-lg lg:mx-32 bg-scribble" id="realisations">
-        <h2 class="text-4xl font-bold mb-2">Outils & technologies</h2>
+        <h2 class="text-4xl font-bold mb-2">Technologies</h2>
         <div class="h-1 w-20 bg-green-500"></div>
         <section class="relative bg-white">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 <div class="">
-                    <p class="text-justify font-normal lg:mt-8">
+                    <p class="text-justify font-normal lg:mt-8 hidden lg:block">
                         En tant que développeur full-stack, je me spécialise dans le stack TaLL (Tailwind, Alpine,
                         Laravel, Livewire) pour créer des applications web modernes et efficaces. Avec Tailwind CSS,
                         Alpine.js, Laravel et Livewire, je construis des solutions web innovantes.
