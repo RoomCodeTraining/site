@@ -3,17 +3,25 @@
         <div
             class="w-full  rounded-lg shadow-lg border-b-4 project-card hover:border-green-500 hover:-translate-y-2 hover:shadow-2xl">
             <div>
-                <img src="https://th.bing.com/th/id/OIP.YlRGRggpViTg5CudPbApsAHaEK?rs=1&pid=ImgDetMain" alt="realisation"
-                    class="w-full h-72 object-cover rounded-lg  relative">
+                <img :src="article.image" alt="realisation" class="w-full h-72 object-cover rounded-lg  relative">
             </div>
             <div class="mt-8 mx-4 mb-2">
-                <h1 class="text-xl font-bold mb-1">Les microservices</h1>
-                <p class="text-gray-700 text-justify">description du blog</p>
+                <span class="text-md font-bold mb-4">{{ article.category }}</span>
+                <p class="text-gray-700 text-justify mt-5">
+                    {{ article.title }}
+                </p>
             </div>
         </div>
     </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    const props = defineProps({
+        article: {
+            type: Object,
+            required: true
+        },
+    })
+</script>
 <style scoped>
     .project-card {
         transition: all 0.5s ease;
