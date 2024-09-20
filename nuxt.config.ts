@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   plugins : [
-    { src : '~/plugins/brevo', mode : 'client' },
+    { src : '~/plugins/woot', mode : 'client' },
   ],
   modules: [
       '@nuxtjs/tailwindcss',
