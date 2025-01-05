@@ -1,41 +1,61 @@
 <template>
-    <div class="px-8 py-6  rounded-lg lg:mx-32" id="experiences">
-        <h2 class="mb-2 text-4xl font-bold lg:text-4xl">Cursus</h2>
-        <div class="w-20 h-1 bg-green-500"></div>
-        <div class="grid grid-cols-1 gap-4 mt-8 mb-8 md:grid-cols-2 lg:space-x-8">
-            <div class="w-full h-auto text-center rounded-lg">
-                <img src="~/assets/images/me.jpg"
-                    alt="realisation" class="relative object-cover w-full h-auto rounded-lg">
-            </div>
-            <div class='px-0 space-y-4 lg:mt-16 justify-justify'>
-                <div>
-                    <h1 class="mb-1 font-bold uppercase text-md">Master en Management Digital des Systèmes d'Informations</h1>
-                    <p class="text-justify text-gray-700">
-                        Actuellement en Master en Management Digital des Systèmes d'Information (MDSI), je me forme pour
-                        devenir un professionnel capable de relever les défis de la transformation numérique des
-                        entreprises. Ce programme combine des enseignements avancés en management et en technologies de
-                        l'information avec des projets concrets axés sur l'innovation et la stratégie digitale.
-                    </p>
+    <div class="py-16" id="experiences">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <SectionHeader
+                title="Cursus"
+                subtitle="Mon Parcours"
+            />
+            <div class="flex flex-col lg:flex-row gap-10 items-stretch">
+                <div class="lg:w-1/2 w-full">
+                    <div class="relative group h-full transform transition-all duration-500 hover:scale-[1.02]">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500 group-hover:blur-lg"></div>
+
+                        <!-- Image Container -->
+                        <div class="relative h-full rounded-xl">
+                            <img src="~/assets/images/me.jpg"
+                                alt="realisation" class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg flex items-end">
+                                <div class="p-4 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                    <p class="font-semibold text-lg">Roger DA</p>
+                                    <p class="text-gray-200 text-sm">Développeur Full Stack</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="mb-1 font-bold uppercase text-md">
-                        License en Méthode Informatique Appliquée a la Gestion des
-                        Entreprises
-                    </h1>
-                    <p class="text-justify text-gray-700"> J'ai obtenu ma Licence en Méthode Informatique Appliquée à la
-                        Gestion des Entreprises (MIAGE) en réalisant un projet appelé Papillon Routier.
-                    </p>
-                </div>
-                <div>
-                    <h1 class="font-bold uppercase text-md">Baccalauréat Serie D</h1>
-                    <p class="text-justify text-gray-700">J'ai obtenu mon Baccalauréat Scientifique (BAC D) avec la
-                        mention Assez Bien au Lycée Classique d'Abidjan. Cette formation m'a offert une solide base en
-                        sciences et mathématiques, ainsi qu'une rigueur intellectuelle essentielle pour la suite de mes
-                        études. Cette période a été marquée par un apprentissage approfondi et une préparation aux défis
-                        académiques et professionnels à venir.</p>
+
+                <div class="lg:w-1/2 w-full space-y-6">
+                    <CursusCard
+                        period="2023 - 2024"
+                        title="Master en Management Digital"
+                        description="Actuellement en Master en Management Digital des Systèmes d'Information (MDSI), je me forme pour devenir un professionnel capable de relever les défis de la transformation numérique des entreprises."
+                    />
+                    <CursusCard
+                        period="2020 - 2023"
+                        title="License MIAGE"
+                        description="J'ai obtenu ma Licence en Méthode Informatique Appliquée à la Gestion des Entreprises (MIAGE) en réalisant un projet appelé Papillon Routier."
+                    />
+
+                    <CursusCard
+                        period="2020"
+                        title="Baccalauréat Serie D"
+                        description="J'ai obtenu mon Baccalauréat Scientifique (BAC D) avec la mention Assez Bien au Lycée Classique d'Abidjan."
+                    />
                 </div>
             </div>
         </div>
     </div>
-
 </template>
+
+<script setup>
+import CursusCard from './CursusCard.vue'
+import SectionHeader from './SectionHeader.vue'
+</script>
+
+<style scoped>
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+</style>
