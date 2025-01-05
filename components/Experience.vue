@@ -1,10 +1,10 @@
 <template>
-    <section class="px-8 py-12 rounded-lg lg:mx-32" id="experiences">
+    <section class="py-24" id="experiences">
         <SectionHeader
             title="Experiences"
             subtitle="Mes expériences professionnelles"
         />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             <div class="relative w-full min-h-[420px] bg-gradient-to-br from-green-50 via-white to-green-50 p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden group">
                 <!-- Animated background patterns -->
                 <div class="absolute inset-0">
