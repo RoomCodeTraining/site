@@ -1,7 +1,7 @@
 <template>
     <Header />
     <Hero />
-    <div class="container mx-auto  py-12">
+    <div class="container mx-auto py-4">
         <Cursus />
         <Experience />
         <Realisation />

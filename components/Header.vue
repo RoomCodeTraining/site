@@ -1,6 +1,6 @@
 <template>
     <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200 dark:bg-gray-900/80 dark:border-gray-700 transition-all duration-300">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
             <a href="/" class="flex items-center space-x-3 group">
                 <div class="relative w-10 h-10 flex items-center justify-center bg-gray-900 dark:bg-white rounded-lg overflow-hidden transition-transform group-hover:scale-110">
                     <span class="text-xl font-bold text-white dark:text-gray-900">DR</span>
