@@ -1,5 +1,5 @@
 <template>
-<div class="min-h-[60vh] bg-[#fafafa] -mt-24 lg:-mt-16 relative overflow-hidden flex items-center">
+<div class="min-h-[60vh] bg-[#fafafa] -mt-12 pt-16 sm:-mt-16 sm:pt-20 lg:-mt-16 lg:pt-24 relative overflow-hidden flex items-center">
   <!-- Formes SVG modernes -->
   <div class="absolute inset-0 overflow-hidden">
     <!-- Blobs animés -->
@@ -16,34 +16,34 @@
     <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
   </div>
 
-  <div class="relative isolate px-6 lg:px-8 w-full py-8">
+  <div class="relative isolate px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10">
     <div class="mx-auto max-w-3xl">
-      <div class="text-center space-y-4">
+      <div class="text-center space-y-3 sm:space-y-4">
         <div class="relative">
-          <div class="lg:hidden relative mx-auto mb-4">
+          <div class="lg:hidden relative mx-auto mb-3 sm:mb-4">
             <div class="absolute -inset-1 bg-gradient-to-r from-[#4F46E5]/30 to-[#818CF8]/30 rounded-full blur-sm"></div>
-            <img src="~/assets/images/61591337.jpg" class="relative rounded-full w-20 mx-auto shadow-soft transition-all duration-300 hover:scale-105 border-2 border-white"/>
+            <img src="~/assets/images/61591337.jpg" class="relative rounded-full w-16 sm:w-20 mx-auto shadow-soft transition-all duration-300 hover:scale-105 border-2 border-white"/>
           </div>
           <div class="relative inline-block">
-            <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-2xl animate-bounce">✨</span>
-            <h1 class="lg:hidden text-3xl font-bold tracking-tight text-[#2c3e50] animate-fade-in">
+            <span class="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2 text-xl sm:text-2xl animate-bounce">✨</span>
+            <h1 class="lg:hidden text-2xl sm:text-3xl font-bold tracking-tight text-[#2c3e50] animate-fade-in">
               <span class="bg-gradient-to-r from-[#4F46E5] via-[#818CF8] to-[#4F46E5] bg-clip-text text-transparent">
                 Roger DA
               </span>
             </h1>
           </div>
-          <h2 class="text-2xl lg:text-4xl font-bold tracking-tight animate-fade-in text-[#1e293b] mt-2">
+          <h2 class="text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight animate-fade-in text-[#1e293b] mt-2">
             Développeur Full Stack & Formateur
             <span class="inline-block animate-pulse-fast">🚀</span>
           </h2>
         </div>
 
-        <p class="text-base lg:text-lg leading-7 text-[#475569] max-w-2xl mx-auto animate-fade-in-up font-light">
+        <p class="text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 text-[#475569] max-w-2xl mx-auto animate-fade-in-up font-light px-2">
           Expert en développement web, je crée des solutions digitales innovantes et forme la nouvelle génération de développeurs avec passion.
           <span class="inline-block animate-spin-slow ml-1">💫</span>
         </p>
 
-        <div class="flex items-center justify-center gap-x-3 animate-fade-in-up pt-2">
+        <div class="flex items-center justify-center gap-x-2 sm:gap-x-3 animate-fade-in-up pt-2">
           <a href="https://www.linkedin.com/in/dasieroger/" target="_blank"
              class="group relative rounded-full px-5 py-2.5 text-sm font-semibold text-white overflow-hidden shine-effect">
             <span class="absolute inset-0 w-full h-full bg-[#0077B5] opacity-90 group-hover:opacity-100 transition-all duration-300"></span>
