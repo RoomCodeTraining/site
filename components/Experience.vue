@@ -1,5 +1,5 @@
 <template>
-    <section class="py-24" id="experiences">
+    <section class="py-8" id="experiences">
         <SectionHeader
             title="Experiences"
             subtitle="Mes expériences professionnelles"

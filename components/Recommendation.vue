@@ -1,5 +1,5 @@
 <template>
-    <section class="py-24" id="recommendations">
+    <section class="py-8" id="recommendations">
         <SectionHeader
             title="Témoignages"
             subtitle="Ce qu'ils disent de moi"

@@ -1,5 +1,5 @@
 <template>
-    <section class="py-24" id="stack">
+    <section class="py-8" id="stack">
         <SectionHeader
             title="Stack"
             subtitle="Technologies"

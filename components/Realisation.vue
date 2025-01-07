@@ -1,5 +1,5 @@
 <template>
-    <div class="py-24 bg-gradient-to-b from-white via-gray-50 to-white" id="realisations">
+    <div class="py-8 bg-gradient-to-b from-white via-gray-50 to-white" id="realisations">
         <div class="container mx-auto px-4 max-w-6xl relative">
             <!-- Éléments décoratifs d'arrière-plan -->
             <div class="absolute inset-0 overflow-hidden">

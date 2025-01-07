@@ -9,7 +9,21 @@
                 <span class="self-center text-lg sm:text-xl font-extrabold whitespace-nowrap dark:text-white">Da Sié Roger</span>
             </a>
 
-            <div class="flex items-center gap-2 sm:gap-4">
+            <!-- Navigation Menu -->
+            <div :class="[
+                'w-full md:w-auto md:flex md:items-center md:justify-center transition-all duration-300 ease-out order-3 md:order-2',
+                isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 md:opacity-100 md:max-h-64'
+            ]" class="overflow-hidden md:overflow-visible">
+                <ul class="flex flex-col py-2 md:py-0 mt-3 md:mt-0 space-y-2 md:space-y-0 font-medium md:flex-row md:space-x-8">
+                    <Navbar @click="closeMenu" link="#cursus" title="cursus" />
+                    <Navbar @click="closeMenu" link="#experiences" title="experiences" />
+                    <Navbar @click="closeMenu" link="#realisations" title="réalisations" />
+                    <Navbar @click="closeMenu" link="#stack" title="stack" />
+                    <Navbar @click="closeMenu" link="#recommendations" title="témoignages" />
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-4 order-2 md:order-3">
                 <!-- Theme Toggle -->
                 <button @click="toggleTheme" class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors">
                     <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,20 +44,6 @@
                         <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-            </div>
-
-            <!-- Navigation Menu -->
-            <div :class="[
-                'w-full md:w-auto transition-all duration-300 ease-out',
-                isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 md:opacity-100 md:max-h-64'
-            ]" class="overflow-hidden md:overflow-visible">
-                <ul class="flex flex-col py-2 md:py-0 mt-3 md:mt-0 space-y-2 md:space-y-0 font-medium md:flex-row md:space-x-8">
-                    <Navbar @click="closeMenu" link="#cursus" title="cursus scolaire" />
-                    <Navbar @click="closeMenu" link="#experiences" title="experiences" />
-                    <Navbar @click="closeMenu" link="#realisations" title="réalisations" />
-                    <Navbar @click="closeMenu" link="#blog" title="blog" />
-                    <Navbar @click="closeMenu" link="#contact" title="contact" />
-                </ul>
             </div>
         </div>
     </nav>
