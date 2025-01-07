@@ -5,12 +5,12 @@
             subtitle="Mes expériences professionnelles"
         />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            <div class="relative w-full min-h-[420px] bg-gradient-to-br from-green-50 via-white to-green-50 p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden group">
+            <div class="relative w-full min-h-[420px] bg-gradient-to-br from-green-50 via-white to-green-50 dark:from-green-900/10 dark:via-gray-900 dark:to-green-900/10 p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] overflow-hidden group">
                 <!-- Animated background patterns -->
                 <div class="absolute inset-0">
-                    <div class="absolute inset-0 bg-grid-black/[0.02] bg-[size:20px_20px]"></div>
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-100/20 via-transparent to-green-50/30 animate-gradient"></div>
-                    <div class="absolute -inset-[100%] bg-gradient-to-r from-transparent via-green-100/10 to-transparent translate-x-[200%] group-hover:translate-x-[50%] transition-transform duration-1000 ease-in-out"></div>
+                    <div class="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-100/20 via-transparent to-green-50/30 dark:from-green-400/10 dark:via-transparent dark:to-green-400/5 animate-gradient"></div>
+                    <div class="absolute -inset-[100%] bg-gradient-to-r from-transparent via-green-100/10 dark:via-green-400/10 to-transparent translate-x-[200%] group-hover:translate-x-[50%] transition-transform duration-1000 ease-in-out"></div>
                 </div>
 
                 <!-- Main content -->
@@ -20,24 +20,24 @@
 
                     <!-- Experience number with label -->
                     <div class="relative mt-16 text-center">
-                        <div class="absolute -inset-10 rounded-full bg-green-50/50 blur-2xl group-hover:bg-green-100/50 transition-all duration-500"></div>
+                        <div class="absolute -inset-10 rounded-full bg-green-50/50 dark:bg-green-900/30 blur-2xl group-hover:bg-green-100/50 dark:group-hover:bg-green-800/40 transition-all duration-500"></div>
                         <div class="relative">
                             <!-- Label on top -->
                             <div class="mb-3">
-                                <span class="text-sm uppercase tracking-wider text-green-700/70 font-medium">Expérience professionnelle</span>
+                                <span class="text-sm uppercase tracking-wider text-green-700/70 dark:text-green-400/90 font-medium">Expérience professionnelle</span>
                             </div>
                             <!-- Number and text -->
                             <div class="flex items-center justify-center">
                                 <div class="relative">
-                                    <span class="block text-[100px] leading-none font-black bg-gradient-to-br from-green-600 via-green-700 to-green-950 bg-clip-text text-transparent animate-pulse">
+                                    <span class="block text-[100px] leading-none font-black bg-gradient-to-br from-green-600 via-green-700 to-green-950 dark:from-green-400 dark:via-green-300 dark:to-green-200 bg-clip-text text-transparent animate-pulse">
                                         {{ yearsOfExperience }}
                                     </span>
                                     <!-- Decorative dots -->
-                                    <div class="absolute top-0 -right-4 w-3 h-3 rounded-full bg-green-500/30 animate-float"></div>
-                                    <div class="absolute bottom-0 -left-4 w-2 h-2 rounded-full bg-green-600/20 animate-float-delayed"></div>
+                                    <div class="absolute top-0 -right-4 w-3 h-3 rounded-full bg-green-500/30 dark:bg-green-400/30 animate-float"></div>
+                                    <div class="absolute bottom-0 -left-4 w-2 h-2 rounded-full bg-green-600/20 dark:bg-green-400/20 animate-float-delayed"></div>
                                 </div>
                                 <div class="ml-3">
-                                    <span class="block text-3xl font-bold bg-gradient-to-r from-green-700 to-green-900 bg-clip-text text-transparent">
+                                    <span class="block text-3xl font-bold bg-gradient-to-r from-green-700 to-green-900 dark:from-green-400 dark:to-green-200 bg-clip-text text-transparent">
                                         ans
                                     </span>
                                 </div>

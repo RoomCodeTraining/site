@@ -1,11 +1,11 @@
 <template>
-    <div class="py-8 bg-gradient-to-b from-white via-gray-50 to-white" id="realisations">
+    <div class="py-8" id="realisations">
         <div class="container mx-auto px-4 max-w-6xl relative">
             <!-- Éléments décoratifs d'arrière-plan -->
             <div class="absolute inset-0 overflow-hidden">
-                <div class="absolute top-0 -left-4 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div class="absolute top-20 -right-4 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div class="absolute top-0 -left-4 w-72 h-72 bg-green-200 dark:bg-green-500/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob"></div>
+                <div class="absolute top-20 -right-4 w-72 h-72 bg-green-300 dark:bg-green-600/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-green-400 dark:bg-green-700/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
             </div>
 
             <!-- Contenu principal -->
@@ -23,14 +23,14 @@
                              class="group"
                              :style="{ '--index': index }">
                             <NuxtLink :to="`/realisations/${realisation.slug}`"
-                                     class="block transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl rounded-xl">
+                                     class="block transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl dark:hover:shadow-green-500/10 rounded-xl">
                                 <RealisationCard :realisation="realisation" />
                             </NuxtLink>
                         </div>
                     </div>
 
                     <!-- Pattern d'arrière-plan -->
-                    <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none"></div>
                 </section>
             </div>
         </div>

@@ -25,9 +25,9 @@
 
                 <!-- Content with enhanced typography -->
                 <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-10 font-light">
-                    <span class="text-4xl font-serif text-green-500/40 leading-3">"</span>
+                    <span class="text-4xl font-serif text-green-500/40 dark:text-green-400/40 leading-3">"</span>
                     {{ recommendation.content }}
-                    <span class="text-4xl font-serif text-green-500/40 leading-3">"</span>
+                    <span class="text-4xl font-serif text-green-500/40 dark:text-green-400/40 leading-3">"</span>
                 </p>
 
                 <!-- Author info with modern layout -->

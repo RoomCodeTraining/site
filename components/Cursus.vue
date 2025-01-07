@@ -7,7 +7,7 @@
         <div class="flex flex-col lg:flex-row gap-10 items-stretch mt-16">
             <div class="lg:w-1/2 w-full">
                 <div class="relative group h-full transform transition-all duration-500 hover:scale-[1.02]">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500 group-hover:blur-lg"></div>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500 group-hover:blur-lg dark:opacity-30 dark:group-hover:opacity-50"></div>
 
                     <!-- Image Container -->
                     <div class="relative h-full rounded-xl">

@@ -1,11 +1,11 @@
 <template>
-<div class="min-h-[60vh] bg-[#fafafa] -mt-12 pt-16 sm:-mt-16 sm:pt-20 lg:-mt-16 lg:pt-24 relative overflow-hidden flex items-center">
+<div class="min-h-[60vh] bg-[#fafafa] dark:bg-gray-900 -mt-12 pt-16 sm:-mt-16 sm:pt-20 lg:-mt-16 lg:pt-24 relative overflow-hidden flex items-center">
   <!-- Formes SVG modernes -->
   <div class="absolute inset-0 overflow-hidden">
     <!-- Blobs animés -->
-    <div class="absolute top-0 -left-4 w-72 h-72 bg-gradient-to-br from-[#4F46E5]/20 to-[#818CF8]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-    <div class="absolute top-0 -right-4 w-72 h-72 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-br from-[#10B981]/20 to-[#34D399]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-gradient-to-br from-[#4F46E5]/20 to-[#818CF8]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob dark:mix-blend-normal"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-gradient-to-br from-[#EC4899]/20 to-[#F472B6]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 dark:mix-blend-normal"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-br from-[#10B981]/20 to-[#34D399]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 dark:mix-blend-normal"></div>
 
     <!-- Particules de nouvelle année -->
     <div class="particles-container">
@@ -13,7 +13,7 @@
     </div>
 
     <!-- Grille subtile -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]"></div>
   </div>
 
   <div class="relative isolate px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10">
@@ -22,23 +22,23 @@
         <div class="relative">
           <div class="lg:hidden relative mx-auto mb-3 sm:mb-4">
             <div class="absolute -inset-1 bg-gradient-to-r from-[#4F46E5]/30 to-[#818CF8]/30 rounded-full blur-sm"></div>
-            <img src="~/assets/images/61591337.jpg" class="relative rounded-full w-16 sm:w-20 mx-auto shadow-soft transition-all duration-300 hover:scale-105 border-2 border-white"/>
+            <img src="~/assets/images/61591337.jpg" class="relative rounded-full w-16 sm:w-20 mx-auto shadow-soft transition-all duration-300 hover:scale-105 border-2 border-white dark:border-gray-800"/>
           </div>
           <div class="relative inline-block">
             <span class="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2 text-xl sm:text-2xl animate-bounce">✨</span>
-            <h1 class="lg:hidden text-2xl sm:text-3xl font-bold tracking-tight text-[#2c3e50] animate-fade-in">
+            <h1 class="lg:hidden text-2xl sm:text-3xl font-bold tracking-tight text-[#2c3e50] dark:text-white animate-fade-in">
               <span class="bg-gradient-to-r from-[#4F46E5] via-[#818CF8] to-[#4F46E5] bg-clip-text text-transparent">
                 Roger DA
               </span>
             </h1>
           </div>
-          <h2 class="text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight animate-fade-in text-[#1e293b] mt-2">
+          <h2 class="text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight animate-fade-in text-[#1e293b] dark:text-white mt-2">
             Développeur Full Stack & Formateur
             <span class="inline-block animate-pulse-fast">🚀</span>
           </h2>
         </div>
 
-        <p class="text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 text-[#475569] max-w-2xl mx-auto animate-fade-in-up font-light px-2">
+        <p class="text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 text-[#475569] dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up font-light px-2">
           Expert en développement web, je crée des solutions digitales innovantes et forme la nouvelle génération de développeurs avec passion.
           <span class="inline-block animate-spin-slow ml-1">💫</span>
         </p>

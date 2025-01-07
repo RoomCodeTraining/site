@@ -71,7 +71,11 @@ const closeMenu = () => {
 
 const toggleTheme = () => {
     isDark.value = !isDark.value
-    document.documentElement.classList.toggle('dark')
+    if (isDark.value) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
     localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
 
@@ -82,6 +86,8 @@ onMounted(() => {
     isDark.value = theme === 'dark'
     if (isDark.value) {
         document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
     }
 })
 </script>
