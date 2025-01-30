@@ -1,62 +1,82 @@
 <template>
-    <section class="py-8" id="recommendations">
-        <SectionHeader
-            title="Témoignages"
-            subtitle="Ce qu'ils disent de moi"
-        />
+    <section class="py-24 relative overflow-hidden" id="recommendations">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50/80 to-white dark:from-gray-900/80 dark:to-gray-800 -z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.05),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.05),transparent_50%)] -z-10"></div>
 
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div v-for="recommendation in recommendations" :key="recommendation.id"
-                 class="group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900
-                        p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500
-                        before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-blue-500/5
-                        before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
-                        border border-gray-100/50 dark:border-gray-700/50 backdrop-blur-sm"
-                 :class="[expandedCard === recommendation.id ? 'h-auto' : 'h-[400px]']">
+        <div class="container mx-auto px-4">
+            <SectionHeader
+                title="Témoignages"
+                subtitle="Ce qu'ils disent de moi"
+            />
 
-                <!-- Quote icon with dynamic styling -->
-                <div class="relative mb-6">
-                    <div class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-green-500/10 to-blue-500/10
-                              rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
-                    <svg class="w-10 h-10 text-green-500/30 group-hover:text-green-500/40 transform group-hover:rotate-12
-                              transition-all duration-500" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm18 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                    </svg>
-                </div>
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div v-for="recommendation in recommendations" :key="recommendation.id"
+                     class="group relative">
+                    <!-- Card -->
+                    <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-8
+                               shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)]
+                               transition-all duration-500 ease-out
+                               hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.4)]
+                               border border-gray-100/50 dark:border-gray-700/50"
+                         :class="[expandedCard === recommendation.id ? 'h-auto' : 'h-[460px]']">
 
-                <!-- Content with enhanced typography -->
-                <div class="flex-1 overflow-hidden relative">
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-light"
-                       :class="[expandedCard === recommendation.id ? '' : 'line-clamp-6']">
-                        <span class="text-4xl font-serif text-green-500/40 dark:text-green-400/40 leading-3">"</span>
-                        {{ recommendation.content }}
-                        <span class="text-4xl font-serif text-green-500/40 dark:text-green-400/40 leading-3">"</span>
-                    </p>
-                    <button v-if="expandedCard !== recommendation.id && isTextTruncated(recommendation.content)"
-                            @click="expandCard(recommendation.id)"
-                            class="absolute bottom-0 right-0 px-3 py-1 text-sm text-green-600 dark:text-green-400
-                                   bg-gradient-to-l from-white dark:from-gray-800 via-white dark:via-gray-800">
-                        Lire plus
-                    </button>
-                    <button v-if="expandedCard === recommendation.id"
-                            @click="expandCard(null)"
-                            class="mt-2 text-sm text-green-600 dark:text-green-400">
-                        Réduire
-                    </button>
-                </div>
+                        <!-- Author info at the top -->
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="relative flex-shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 rounded-full
+                                          opacity-75 blur-md group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <img :src="recommendation.avatar" :alt="recommendation.name"
+                                     class="relative w-16 h-16 rounded-full object-cover border-4 border-white dark:border-gray-800
+                                            group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white text-lg">{{ recommendation.name }}</h4>
+                                <p class="text-sm text-green-600 dark:text-green-400">{{ recommendation.position }}</p>
+                            </div>
+                        </div>
 
-                <!-- Author info with modern layout -->
-                <div class="flex items-center space-x-5 mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-500 rounded-full blur-sm
-                                  opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                        <img :src="recommendation.avatar" :alt="recommendation.name"
-                             class="relative w-14 h-14 rounded-full object-cover ring-4 ring-white dark:ring-gray-800
-                                    group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="transform group-hover:translate-x-2 transition-transform duration-500">
-                        <h4 class="font-semibold text-gray-900 dark:text-white text-lg mb-1">{{ recommendation.name }}</h4>
-                        <p class="text-sm text-green-600 dark:text-green-400 font-medium">{{ recommendation.position }}</p>
+                        <!-- Quote decoration -->
+                        <div class="absolute top-6 right-6">
+                            <svg class="w-8 h-8 text-green-400/20 dark:text-green-500/20" fill="currentColor" viewBox="0 0 32 32">
+                                <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm18 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
+                            </svg>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="relative">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg"
+                               :class="[expandedCard === recommendation.id ? '' : 'line-clamp-[8]']">
+                                {{ recommendation.content }}
+                            </p>
+
+                            <!-- Gradient overlay for truncated text -->
+                            <div v-if="expandedCard !== recommendation.id && isTextTruncated(recommendation.content)"
+                                 class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white dark:from-gray-800 to-transparent">
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="absolute bottom-6 right-6">
+                            <button v-if="expandedCard !== recommendation.id && isTextTruncated(recommendation.content)"
+                                    @click="expandCard(recommendation.id)"
+                                    class="text-sm font-medium text-green-600 dark:text-green-400 hover:text-green-700
+                                           dark:hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
+                                <span>Lire plus</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <button v-if="expandedCard === recommendation.id"
+                                    @click="expandCard(null)"
+                                    class="text-sm font-medium text-green-600 dark:text-green-400 hover:text-green-700
+                                           dark:hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
+                                <span>Réduire</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,7 +95,7 @@ const expandCard = (id) => {
 }
 
 const isTextTruncated = (text) => {
-    return text.length > 280 // Approximativement 6 lignes de texte
+    return text.length > 320 // Approximativement 8 lignes de texte
 }
 
 const recommendations = ref([
