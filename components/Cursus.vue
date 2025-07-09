@@ -1,45 +1,86 @@
 <template>
-    <section class="py-8" id="cursus">
-        <SectionHeader
-            title="Cursus"
-            subtitle="Mon Parcours"
-        />
-        <div class="flex flex-col lg:flex-row gap-10 items-stretch mt-16">
-            <div class="lg:w-1/2 w-full">
-                <div class="relative group h-full transform transition-all duration-500 hover:scale-[1.02]">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500 group-hover:blur-lg dark:opacity-30 dark:group-hover:opacity-50"></div>
+    <section class="py-24 relative" id="cursus">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Parcours Académique"
+                subtitle="Mon évolution professionnelle et mes objectifs"
+            />
 
-                    <!-- Image Container -->
-                    <div class="relative h-full rounded-xl">
-                        <img src="~/assets/images/me.jpg"
-                            alt="realisation" class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg flex items-end">
-                            <div class="p-4 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-                                <p class="font-semibold text-lg">Roger DA</p>
-                                <p class="text-gray-200 text-sm">Développeur Full Stack</p>
+            <div class="mt-24">
+                <!-- Enhanced Horizontal Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent transform -translate-y-1/2"></div>
+
+                    <!-- Timeline items -->
+                    <div class="relative flex justify-between items-start gap-16">
+                        <!-- Master -->
+                        <div class="group relative flex flex-col items-center">
+                            <!-- Timeline dot -->
+                            <div class="relative z-10 mb-12">
+                                <div class="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full shadow-md group-hover:scale-125 transition-transform duration-300"></div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="w-80 transform group-hover:-translate-y-2 transition-all duration-300">
+                                <CursusCard
+                                    period="2023 - 2024"
+                                    title="Master en Management Digital"
+                                    school="ESATIC - École Supérieure Africaine des TIC"
+                                    description="Formation avancée en transformation digitale et management des systèmes d'information pour devenir un leader technologique."
+                                    icon="🎯"
+                                    skills="['Management', 'Transformation Digitale', 'Systèmes d\'Information', 'Leadership']"
+                                    status="En cours"
+                                    level="advanced"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- License -->
+                        <div class="group relative flex flex-col items-center">
+                            <!-- Timeline dot -->
+                            <div class="relative z-10 mb-12">
+                                <div class="w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-md group-hover:scale-125 transition-transform duration-300"></div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="w-80 transform group-hover:-translate-y-2 transition-all duration-300">
+                                <CursusCard
+                                    period="2020 - 2023"
+                                    title="Licence MIAGE"
+                                    school="Université Polytechnique de Bingerville"
+                                    description="Formation en Méthodes Informatiques Appliquées à la Gestion des Entreprises avec réalisation du projet Papillon Routier."
+                                    icon="💻"
+                                    skills="['Informatique', 'Gestion', 'Projet Papillon Routier', 'Développement']"
+                                    status="Obtenu"
+                                    level="intermediate"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Bac -->
+                        <div class="group relative flex flex-col items-center">
+                            <!-- Timeline dot -->
+                            <div class="relative z-10 mb-12">
+                                <div class="w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-md group-hover:scale-125 transition-transform duration-300"></div>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="w-80 transform group-hover:-translate-y-2 transition-all duration-300">
+                                <CursusCard
+                                    period="2020"
+                                    title="Baccalauréat Série D"
+                                    school="Lycée Classique d'Abidjan"
+                                    description="Baccalauréat Scientifique obtenu avec mention Assez Bien, fondation solide pour mes études supérieures."
+                                    icon="🏆"
+                                    skills="['Sciences', 'Mention Assez Bien', 'Fondations']"
+                                    status="Obtenu"
+                                    level="foundation"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="lg:w-1/2 w-full space-y-6">
-                <CursusCard
-                    period="2023 - 2024"
-                    title="Master en Management Digital"
-                    description="Actuellement en Master en Management Digital des Systèmes d'Information (MDSI), je me forme pour devenir un professionnel capable de relever les défis de la transformation numérique des entreprises."
-                />
-                <CursusCard
-                    period="2020 - 2023"
-                    title="License MIAGE"
-                    description="J'ai obtenu ma Licence en Méthode Informatique Appliquée à la Gestion des Entreprises (MIAGE) en réalisant un projet appelé Papillon Routier."
-                />
-
-                <CursusCard
-                    period="2020"
-                    title="Baccalauréat Serie D"
-                    description="J'ai obtenu mon Baccalauréat Scientifique (BAC D) avec la mention Assez Bien au Lycée Classique d'Abidjan."
-                />
             </div>
         </div>
     </section>
@@ -51,9 +92,53 @@ import SectionHeader from './SectionHeader.vue'
 </script>
 
 <style scoped>
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+/* Clean and minimal styles */
+* {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .flex.justify-between {
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .flex.justify-between > div {
+        width: 100%;
+    }
+
+    .w-80 {
+        width: 100%;
+        max-width: 28rem;
+    }
+
+    .mb-12 {
+        margin-bottom: 3rem;
+    }
+
+    .gap-16 {
+        gap: 0;
+    }
+
+    .mt-24 {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .py-24 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .mt-24 {
+        margin-top: 2rem;
+    }
+
+    .mb-12 {
+        margin-bottom: 2rem;
+    }
 }
 </style>

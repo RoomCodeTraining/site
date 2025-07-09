@@ -4,5 +4,8 @@ export interface Realisation {
   title: string;
   description: string;
   technologies: string[];
-  image: string;
+  main_image: string;
+  images?: string[];
+  application_link?: string;
+  slug: string;
 }
