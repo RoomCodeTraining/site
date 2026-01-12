@@ -218,7 +218,9 @@
           </div>
 
           <!-- Avatar de profil style Grafikart amélioré -->
-          <div class="relative flex justify-center lg:justify-end items-center">
+          <div
+            class="relative hidden lg:flex justify-center lg:justify-end items-center"
+          >
             <Transition name="fade-up" appear>
               <div
                 v-if="isVisible"
