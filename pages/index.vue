@@ -1,39 +1,36 @@
 <template>
-    <Header />
-    <Hero />
-    <div class="max-w-6xl mx-auto px-4 py-4">
-        <Cursus />
-        <Experience />
-        <Realisation />
-        <!-- <Formation /> -->
-        <!-- <Packages /> -->
-        <Blog />
-        <Stack />
-        <Recommendation />
-    </div>
-    <Backstage />
-    <Footer />
+  <Header />
+  <Hero />
+  <!-- Projets récents - Juste après le Hero -->
+  <RecentProjects />
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <Cursus />
+    <Experience />
+    <Realisation />
+    <!-- <Formation /> -->
+    <ProjectManagement />
+    <Recommendation />
+  </div>
+  <Footer />
 </template>
 
 <script setup>
 import Header from '~/components/Header.vue'
 import Hero from '~/components/Hero.vue'
+import RecentProjects from '~/components/RecentProjects.vue'
 import Cursus from '~/components/Cursus.vue'
 import Experience from '~/components/Experience.vue'
 import Realisation from '~/components/Realisation.vue'
 import Formation from '~/components/Formation.vue'
-import Packages from '~/components/Packages.vue'
-import Blog from '~/components/Blog.vue'
-import Stack from '~/components/Stack.vue'
+import ProjectManagement from '~/components/ProjectManagement.vue'
 import Recommendation from '~/components/Recommendation.vue'
-import Backstage from '~/components/Backstage.vue'
 import Footer from '~/components/Footer.vue'
 </script>
 
 <style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-    }
+body {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 </style>

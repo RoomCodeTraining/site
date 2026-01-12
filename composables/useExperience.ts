@@ -4,20 +4,27 @@ import type { Experience } from '~/types/experience'
 export const useExperience = () => useState<Experience[]>('experiences', () => [
   {
             id: 1,
-            year: '2021-maintenant',
-            post: "Technicien d'exploitation & Developpeur",
+            year: '2024-maintenant',
+            post: "Chef Equipe Exploitation",
             company: "ASACI TECHS",
-            description: "En tant que technicien d'exploitation, je suis en charge de la maintenance des serveurs et des applications. En tant que développeur, je participe à la réalisation de projets innovants.",
+            description: "Promotion au poste de Chef d'équipe d'exploitation. Je suis maintenant responsable de la supervision et de la coordination de l'équipe technique. Je gère la maintenance des serveurs et des applications, tout en continuant à participer au développement de projets innovants.",
         },
         {
             id: 2,
+            year: '2021-2024',
+            post: "Technicien d'exploitation & Développeur",
+            company: "ASACI TECHS",
+            description: "En tant que technicien d'exploitation, j'étais en charge de la maintenance des serveurs et des applications. En tant que développeur, je participais à la réalisation de projets innovants. Cette expérience m'a permis d'évoluer vers un poste de chef d'équipe.",
+        },
+        {
+            id: 3,
             year: '2020-2021',
             post: "Developpeur Fullstack",
             company: "FuturAfric IA",
             description: "En tant que developpeur fullstack, j'avais pour mission de participer à la réalisation de projets innovants. J'ai eu l'opportunité de travailler sur plusieurs projets innovants et de participer à la réalisation de projets de grande envergure."
         },
         {
-            id: 3,
+            id: 4,
             year: '2019-2021',
             post: "Developpeur Fullstack",
             company: "Webturba",

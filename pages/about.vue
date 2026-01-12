@@ -3,28 +3,28 @@
     <Header />
 
     <div class="pt-20 pb-16">
-      <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header de la page -->
-        <div class="text-center mb-16">
-          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        <div class="text-center mb-12 sm:mb-16">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
             À propos de
             <span class="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               Roger DA
             </span>
           </h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             Développeur passionné, formateur engagé et créateur de contenu dédié à l'apprentissage du développement web.
           </p>
         </div>
 
         <!-- Section Histoire -->
-        <section class="mb-20">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+        <section class="mb-16 sm:mb-20">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                 Mon parcours
               </h2>
-              <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div class="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   Tout a commencé en 2020, quand j'ai découvert ma passion pour le développement web.
                   Ce qui n'était qu'un simple intérêt est rapidement devenu une vocation.
@@ -41,52 +41,52 @@
               </div>
 
               <!-- Statistiques -->
-              <div class="grid grid-cols-3 gap-6 pt-6">
+              <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-4 sm:pt-6">
                 <div class="text-center">
-                  <div class="text-3xl font-bold text-green-600 dark:text-green-400">4+</div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400">Années d'expérience</div>
+                  <div class="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400">4+</div>
+                  <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Années d'expérience</div>
                 </div>
                 <div class="text-center">
-                  <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">50+</div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400">Projets réalisés</div>
+                  <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">50+</div>
+                  <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Projets réalisés</div>
                 </div>
                 <div class="text-center">
-                  <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">20+</div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400">Étudiants formés</div>
+                  <div class="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400">20+</div>
+                  <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Étudiants formés</div>
                 </div>
               </div>
             </div>
 
             <div class="relative">
-              <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl p-8 text-white">
-                <div class="space-y-6">
+              <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl p-6 sm:p-8 text-white">
+                <div class="space-y-4 sm:space-y-6">
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                      <span class="text-2xl">🎯</span>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-xl sm:text-2xl">🎯</span>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold">Ma mission</h3>
-                      <p class="text-green-100">Rendre le développement web accessible à tous</p>
+                      <h3 class="text-lg sm:text-xl font-bold">Ma mission</h3>
+                      <p class="text-sm sm:text-base text-green-100">Rendre le développement web accessible à tous</p>
                     </div>
                   </div>
 
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                      <span class="text-2xl">💡</span>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-xl sm:text-2xl">💡</span>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold">Ma vision</h3>
-                      <p class="text-green-100">Former la prochaine génération de développeurs</p>
+                      <h3 class="text-lg sm:text-xl font-bold">Ma vision</h3>
+                      <p class="text-sm sm:text-base text-green-100">Former la prochaine génération de développeurs</p>
                     </div>
                   </div>
 
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                      <span class="text-2xl">🚀</span>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-xl sm:text-2xl">🚀</span>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold">Mon objectif</h3>
-                      <p class="text-green-100">Créer des solutions qui impactent positivement</p>
+                      <h3 class="text-lg sm:text-xl font-bold">Mon objectif</h3>
+                      <p class="text-sm sm:text-base text-green-100">Créer des solutions qui impactent positivement</p>
                     </div>
                   </div>
                 </div>
@@ -96,25 +96,25 @@
         </section>
 
         <!-- Section Pédagogie -->
-        <section class="mb-20">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <section class="mb-16 sm:mb-20">
+          <div class="text-center mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Ma pédagogie
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
               Une approche personnalisée et pratique pour un apprentissage efficace et durable.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-              <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-                <span class="text-2xl">🎯</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                <span class="text-xl sm:text-2xl">🎯</span>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                 Apprentissage par projet
               </h3>
-              <p class="text-gray-600 dark:text-gray-300">
+              <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                 Chaque concept est appris à travers des projets concrets et réels,
                 permettant une compréhension profonde et pratique.
               </p>
@@ -188,22 +188,22 @@
         </section>
 
         <!-- Section Valeurs -->
-        <section class="mb-20">
-          <div class="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white">
-            <div class="text-center mb-8">
-              <h2 class="text-3xl font-bold mb-4">Mes valeurs</h2>
-              <p class="text-green-100 max-w-2xl mx-auto">
+        <section class="mb-16 sm:mb-20">
+          <div class="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-6 sm:p-8 text-white">
+            <div class="text-center mb-6 sm:mb-8">
+              <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Mes valeurs</h2>
+              <p class="text-sm sm:text-base text-green-100 max-w-2xl mx-auto px-4">
                 Les principes qui guident mon travail et ma relation avec mes étudiants.
               </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               <div class="text-center">
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl">🤝</span>
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <span class="text-xl sm:text-2xl">🤝</span>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Collaboration</h3>
-                <p class="text-green-100 text-sm">
+                <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Collaboration</h3>
+                <p class="text-green-100 text-xs sm:text-sm">
                   Travailler ensemble pour atteindre des objectifs communs
                 </p>
               </div>
@@ -243,26 +243,26 @@
 
         <!-- Section Call to action -->
         <section class="text-center">
-          <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Prêt à commencer votre aventure ?
             </h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Que ce soit pour une formation, un projet ou simplement échanger,
               je suis là pour vous accompagner dans votre parcours de développeur.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a href="/contact"
-                 class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
+                 class="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
                 <span>Me contacter</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
               </a>
               <a href="#formation"
-                 class="inline-flex items-center gap-3 px-8 py-4 border-2 border-green-600 text-green-600 dark:text-green-400 font-semibold rounded-lg hover:bg-green-600 hover:text-white transition-all duration-300">
+                 class="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-green-600 text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold rounded-lg hover:bg-green-600 hover:text-white transition-all duration-300">
                 <span>Découvrir la formation</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
               </a>

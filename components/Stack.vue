@@ -1,5 +1,5 @@
 <template>
-    <section class="py-12 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="stack">
+    <section class="py-16 bg-white dark:bg-slate-950" id="stack">
         <div class="container mx-auto px-4">
             <SectionHeader
                 title="Stack Technologique"
@@ -10,16 +10,12 @@
             <div class="mt-12 mb-12">
                 <div class="max-w-4xl mx-auto">
                     <div class="relative group">
-                        <!-- Effet de fond subtil -->
-                        <div class="absolute -inset-4 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
                         <!-- Carte principale -->
-                        <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+                        <div class="relative bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
                             <div class="flex flex-col lg:flex-row items-center">
                                 <!-- Image Laravel -->
                                 <div class="lg:w-1/3 p-6 lg:p-8">
                                     <div class="relative">
-                                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-full blur-xl"></div>
                                         <img
                                             src="~/assets/images/laravel.png"
                                             alt="Laravel"
@@ -35,25 +31,25 @@
                                             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                                                 Framework Principal
                                             </h3>
-                                            <p class="text-lg text-red-600 dark:text-red-400 font-semibold">
+                                            <p class="text-lg text-slate-900 dark:text-white font-semibold">
                                                 Laravel
                                             </p>
                                         </div>
 
-                                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Mon expertise principale en développement backend. Laravel me permet de créer
                                             des applications robustes, sécurisées et maintenables avec une architecture
                                             élégante et des performances optimales.
                                         </p>
 
                                         <div class="flex flex-wrap gap-2">
-                                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-medium">
+                                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium">
                                                 API REST
                                             </span>
-                                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-medium">
+                                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium">
                                                 Architecture MVC
                                             </span>
-                                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-medium">
+                                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium">
                                                 Eloquent ORM
                                             </span>
                                         </div>
@@ -79,7 +75,7 @@
                 </div>
 
                 <!-- Grille compacte des technologies -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 p-6">
+                <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                         <!-- Backend -->
                         <div class="tech-section">
@@ -227,17 +223,17 @@
             </div>
 
             <!-- Call to action -->
-            <div class="max-w-4xl mx-auto mt-8 text-center">
-                <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-xl p-4 border border-blue-100 dark:border-blue-800">
-                    <h4 class="text-base font-semibold text-gray-900 dark:text-white mb-1">
+            <div class="max-w-4xl mx-auto mt-12 text-center">
+                <div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+                    <h4 class="text-base font-semibold text-slate-900 dark:text-white mb-2">
                         Prêt à collaborer ?
                     </h4>
-                    <p class="text-gray-600 dark:text-gray-400 text-xs mb-3">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
                         Découvrez comment je peux vous aider à réaliser votre projet avec ces technologies
                     </p>
-                    <a href="#contact" class="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-colors duration-300">
+                    <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-200">
                         Discutons de votre projet
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </a>

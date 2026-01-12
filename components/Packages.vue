@@ -1,23 +1,18 @@
 <template>
-    <section class="py-16 bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20" id="packages">
-        <div class="max-w-6xl mx-auto px-4">
-            <SectionHeader
-                title="Packages & Ressources"
-                subtitle="Mes outils et snippets pour développeurs"
-            />
-
-            <div class="mt-16">
+    <section class="py-8 lg:py-12 bg-white dark:bg-slate-950" id="packages">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-8">
                 <!-- Filtres -->
-                <div class="flex flex-wrap gap-3 mb-12 justify-center">
+                <div class="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 justify-center">
                     <button
                         v-for="category in categories"
                         :key="category"
                         @click="activeCategory = category"
                         :class="[
-                            'px-6 py-3 rounded-full font-medium transition-all duration-300',
+                            'px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-medium transition-all duration-300 text-xs sm:text-sm md:text-base whitespace-nowrap',
                             activeCategory === category
-                                ? 'bg-purple-600 text-white shadow-lg'
-                                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700'
+                                ? 'bg-orange-500 text-white shadow-lg'
+                                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                         ]"
                     >
                         {{ category }}
@@ -25,108 +20,129 @@
                 </div>
 
                 <!-- Grille des packages -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     <div
                         v-for="pkg in filteredPackages"
                         :key="pkg.id"
-                        class="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+                        class="group bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200 dark:border-slate-800 hover:border-orange-500/50 dark:hover:border-orange-500/30"
                     >
                         <!-- Header du package -->
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                                    <span class="text-white text-xl">{{ pkg.icon }}</span>
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+                            <div class="flex items-center gap-3 flex-1 min-w-0">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500/10 to-orange-500/5 dark:from-orange-500/20 dark:to-orange-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                                    <span class="text-xl sm:text-2xl">{{ pkg.icon }}</span>
                                 </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900 dark:text-white">{{ pkg.name }}</h3>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ pkg.category }}</p>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-base sm:text-lg font-display truncate">{{ pkg.name }}</h3>
+                                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">{{ pkg.category }}</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full">
-                                    {{ pkg.version }}
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <span 
+                                    :class="[
+                                        'text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border whitespace-nowrap',
+                                        pkg.status === 'stable' 
+                                            ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800'
+                                            : 'bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800'
+                                    ]"
+                                >
+                                    {{ pkg.status === 'stable' ? pkg.version : 'En développement' }}
                                 </span>
                             </div>
                         </div>
 
                         <!-- Description -->
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                             {{ pkg.description }}
                         </p>
 
                         <!-- Technologies -->
-                        <div class="flex flex-wrap gap-2 mb-6">
+                        <div class="flex flex-wrap gap-2 mb-4 sm:mb-6">
                             <span
                                 v-for="tech in pkg.technologies"
                                 :key="tech"
-                                class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+                                class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium rounded-lg"
                             >
                                 {{ tech }}
                             </span>
                         </div>
 
                         <!-- Stats -->
-                        <div class="flex items-center justify-between mb-6 text-sm">
-                            <div class="flex items-center gap-4">
-                                <div class="flex items-center gap-1">
-                                    <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4 sm:mb-6 text-sm border-t border-slate-200 dark:border-slate-800 pt-4">
+                            <div class="flex items-center gap-3 sm:gap-4">
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
-                                    <span class="text-gray-600 dark:text-gray-400">{{ pkg.stars }}</span>
+                                    <span class="text-slate-600 dark:text-slate-400 font-medium text-xs sm:text-sm">{{ pkg.stars }}</span>
                                 </div>
-                                <div class="flex items-center gap-1">
-                                    <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                     </svg>
-                                    <span class="text-gray-600 dark:text-gray-400">{{ pkg.downloads }}</span>
+                                    <span class="text-slate-600 dark:text-slate-400 font-medium text-xs sm:text-sm">{{ pkg.downloads }}</span>
                                 </div>
                             </div>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">{{ pkg.lastUpdate }}</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">{{ pkg.lastUpdate }}</span>
+                        </div>
+
+                        <!-- Features -->
+                        <div v-if="pkg.features" class="mb-4 sm:mb-6">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                                <span
+                                    v-for="feature in pkg.features"
+                                    :key="feature"
+                                    class="px-2 sm:px-2.5 py-0.5 sm:py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-xs rounded-full"
+                                >
+                                    {{ feature }}
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Actions -->
-                        <div class="flex gap-3">
+                        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                            <a
+                                :href="pkg.packagistUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors duration-200 text-sm font-medium"
+                            >
+                                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6s-4.298 9.6-9.6 9.6S2.4 17.302 2.4 12 6.698 2.4 12 2.4zm-1.2 4.8v9.6h2.4V7.2h-2.4zm0-2.4h2.4v2.4h-2.4V4.8z"/>
+                                </svg>
+                                <span class="whitespace-nowrap">Packagist</span>
+                            </a>
                             <a
                                 :href="pkg.githubUrl"
                                 target="_blank"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 text-sm font-medium"
+                                rel="noopener noreferrer"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 text-sm font-medium"
                             >
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
                                 </svg>
-                                Code
-                            </a>
-                            <a
-                                v-if="pkg.demoUrl"
-                                :href="pkg.demoUrl"
-                                target="_blank"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200 text-sm font-medium"
-                            >
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                                Demo
+                                <span class="whitespace-nowrap">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Call to action -->
-                <div class="text-center mt-16">
-                    <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-4">Besoin d'un package personnalisé ?</h3>
-                        <p class="text-purple-100 mb-6 max-w-2xl mx-auto">
-                            Je crée des packages et snippets sur mesure pour optimiser votre workflow de développement.
+                <div class="text-center mt-12 sm:mt-16">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-6 sm:p-8 md:p-12 text-white">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 font-display">Besoin d'un package personnalisé ?</h3>
+                        <p class="text-orange-100 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg px-4">
+                            Je crée des packages PHP et Laravel sur mesure pour optimiser votre workflow de développement.
                         </p>
-                        <a
-                            href="#contact"
-                            class="inline-flex items-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 transition-all duration-300"
+                        <NuxtLink
+                            to="/contact"
+                            class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
                         >
-                            <span>Demander un package</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <span>Me contacter</span>
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -135,96 +151,43 @@
 </template>
 
 <script setup lang="ts">
-import SectionHeader from './SectionHeader.vue'
 
 const activeCategory = ref('Tous')
 
-const categories = ['Tous', 'Vue.js', 'Laravel', 'Utilities', 'UI Components']
+const categories = ['Tous', 'Laravel', 'PHP', 'SMS', 'Payment']
 
 const packages = [
     {
         id: 1,
-        name: 'Vue Form Builder',
-        description: 'Générateur de formulaires dynamiques pour Vue 3 avec validation intégrée et design moderne.',
-        category: 'Vue.js',
-        icon: '📝',
-        version: 'v2.1.0',
-        technologies: ['Vue 3', 'TypeScript', 'Tailwind CSS'],
-        stars: 156,
-        downloads: '2.3k',
-        lastUpdate: 'Il y a 2 semaines',
-        githubUrl: 'https://github.com/roomdada/vue-form-builder',
-        demoUrl: 'https://vue-form-builder-demo.vercel.app'
+        name: 'letexto-sms-package',
+        description: 'Package PHP pour l\'envoi de SMS via l\'API Letexto. Support de l\'envoi simple et en masse, intégration Laravel native, gestion des erreurs et validation des numéros.',
+        category: 'PHP',
+        icon: '📱',
+        version: 'v1.0.0',
+        technologies: ['PHP 8.0+', 'Guzzle', 'Laravel'],
+        stars: 2,
+        downloads: '76',
+        lastUpdate: '2025-06-26',
+        packagistUrl: 'https://packagist.org/packages/room/letexto-sms-package',
+        githubUrl: 'https://github.com/roomdada/package-sms',
+        status: 'stable',
+        features: ['Envoi simple', 'Envoi en masse', 'Intégration Laravel', 'Validation']
     },
     {
         id: 2,
-        name: 'Laravel API Helper',
-        description: 'Collection de helpers pour simplifier le développement d\'APIs avec Laravel.',
+        name: 'laravel-payment-gateways',
+        description: 'Package Laravel réutilisable pour gérer plusieurs agrégateurs de paiement (Cinetpay, Bizao, Winipayer) avec failover automatique, webhooks intégrés et configuration dynamique.',
         category: 'Laravel',
-        icon: '🔧',
-        version: 'v1.5.2',
-        technologies: ['Laravel', 'PHP', 'API'],
-        stars: 89,
-        downloads: '1.1k',
-        lastUpdate: 'Il y a 1 mois',
-        githubUrl: 'https://github.com/roomdada/laravel-api-helper',
-        demoUrl: null
-    },
-    {
-        id: 3,
-        name: 'Tailwind Components',
-        description: 'Bibliothèque de composants UI réutilisables basés sur Tailwind CSS.',
-        category: 'UI Components',
-        icon: '🎨',
-        version: 'v1.0.0',
-        technologies: ['Tailwind CSS', 'Vue 3', 'JavaScript'],
-        stars: 234,
-        downloads: '3.7k',
-        lastUpdate: 'Il y a 3 jours',
-        githubUrl: 'https://github.com/roomdada/tailwind-components',
-        demoUrl: 'https://tailwind-components-demo.vercel.app'
-    },
-    {
-        id: 4,
-        name: 'Date Utils',
-        description: 'Utilitaires pour la manipulation de dates en JavaScript avec support multilingue.',
-        category: 'Utilities',
-        icon: '📅',
-        version: 'v1.2.1',
-        technologies: ['JavaScript', 'Date-fns', 'i18n'],
-        stars: 67,
-        downloads: '890',
-        lastUpdate: 'Il y a 2 semaines',
-        githubUrl: 'https://github.com/roomdada/date-utils',
-        demoUrl: null
-    },
-    {
-        id: 5,
-        name: 'Vue State Manager',
-        description: 'Gestionnaire d\'état léger et performant pour Vue 3 avec devtools intégrées.',
-        category: 'Vue.js',
-        icon: '🗃️',
-        version: 'v1.8.0',
-        technologies: ['Vue 3', 'TypeScript', 'Composition API'],
-        stars: 198,
-        downloads: '2.8k',
-        lastUpdate: 'Il y a 1 semaine',
-        githubUrl: 'https://github.com/roomdada/vue-state-manager',
-        demoUrl: 'https://vue-state-manager-demo.vercel.app'
-    },
-    {
-        id: 6,
-        name: 'Laravel Blade Components',
-        description: 'Composants Blade réutilisables pour accélérer le développement frontend avec Laravel.',
-        category: 'Laravel',
-        icon: '⚡',
-        version: 'v1.3.0',
-        technologies: ['Laravel', 'Blade', 'Alpine.js'],
-        stars: 123,
-        downloads: '1.6k',
-        lastUpdate: 'Il y a 3 semaines',
-        githubUrl: 'https://github.com/roomdada/laravel-blade-components',
-        demoUrl: null
+        icon: '💳',
+        version: 'dev-main',
+        technologies: ['Laravel 9+', 'PHP 8.1+', 'Guzzle'],
+        stars: 6,
+        downloads: '3',
+        lastUpdate: '2025-07-13',
+        packagistUrl: 'https://packagist.org/packages/room/laravel-payment-gateways',
+        githubUrl: 'https://github.com/roomdada/laravel-payment-gateways',
+        status: 'development',
+        features: ['Multi-gateways', 'Failover automatique', 'Webhooks', 'Logging']
     }
 ]
 

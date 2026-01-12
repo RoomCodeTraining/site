@@ -1,23 +1,23 @@
 <template>
-    <section class="py-16 bg-gradient-to-br from-orange-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-orange-900/20" id="blog">
-        <div class="max-w-6xl mx-auto px-4">
+    <section class="py-12 sm:py-16 lg:py-24 bg-white dark:bg-slate-950" id="blog">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Blog & Ressources"
                 subtitle="Partage d'expérience et apprentissage"
             />
 
-            <div class="mt-16">
+            <div class="mt-12 sm:mt-16">
                 <!-- Filtres par catégorie -->
-                <div class="flex flex-wrap gap-3 mb-12 justify-center">
+                <div class="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 justify-center">
                     <button
                         v-for="category in categories"
                         :key="category"
                         @click="activeCategory = category"
                         :class="[
-                            'px-6 py-3 rounded-full font-medium transition-all duration-300',
+                            'px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200',
                             activeCategory === category
-                                ? 'bg-orange-600 text-white shadow-lg'
-                                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700'
+                                ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900'
+                                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                         ]"
                     >
                         {{ category }}
@@ -25,11 +25,11 @@
                 </div>
 
                 <!-- Grille des articles -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     <article
                         v-for="article in filteredArticles"
                         :key="article.id"
-                        class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                        class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
                     >
                         <!-- Image de l'article -->
                         <div class="relative h-48 overflow-hidden">
@@ -40,7 +40,7 @@
                             />
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                             <div class="absolute top-4 left-4">
-                                <span class="px-3 py-1 bg-orange-600 text-white text-xs rounded-full font-medium">
+                                <span class="px-3 py-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs rounded-lg font-medium">
                                     {{ article.category }}
                                 </span>
                             </div>
@@ -52,44 +52,44 @@
                         </div>
 
                         <!-- Contenu de l'article -->
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{ article.date }}</span>
+                        <div class="p-4 sm:p-6">
+                            <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
+                                <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{{ article.date }}</span>
                                 <span class="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{ article.author }}</span>
+                                <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{{ article.author }}</span>
                             </div>
 
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-200">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-200">
                                 {{ article.title }}
                             </h3>
 
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3 leading-relaxed">
+                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 leading-relaxed">
                                 {{ article.excerpt }}
                             </p>
 
                             <!-- Tags -->
-                            <div class="flex flex-wrap gap-2 mb-6">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                                 <span
                                     v-for="tag in article.tags"
                                     :key="tag"
-                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full"
+                                    class="px-2 py-0.5 sm:py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full"
                                 >
                                     #{{ tag }}
                                 </span>
                             </div>
 
                             <!-- Actions -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                                <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                                     <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                                         </svg>
                                         <span>{{ article.views }}</span>
                                     </div>
                                     <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                                         </svg>
                                         <span>{{ article.comments }}</span>
@@ -97,10 +97,10 @@
                                 </div>
                                 <a
                                     :href="article.url"
-                                    class="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-medium text-sm hover:gap-3 transition-all duration-200"
+                                    class="inline-flex items-center gap-1.5 sm:gap-2 text-orange-600 dark:text-orange-400 font-medium text-xs sm:text-sm hover:gap-2 sm:hover:gap-3 transition-all duration-200"
                                 >
                                     Lire l'article
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                     </svg>
                                 </a>
