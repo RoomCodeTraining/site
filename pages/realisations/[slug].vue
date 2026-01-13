@@ -330,6 +330,7 @@
 
 <script setup lang="ts">
 import type { Realisation } from '~/types/realisation'
+import { allRealisations } from '~/data/realisations'
 
 const route = useRoute()
 const realisation = ref<Realisation>({
@@ -342,6 +343,12 @@ const realisation = ref<Realisation>({
   technologies: [],
   slug: '',
 })
+
+// Charger le projet depuis les données statiques
+const found = allRealisations.find(r => r.slug === route.params.slug)
+if (found) {
+  realisation.value = found
+}
 
 const lightboxOpen = ref(false)
 const currentImageIndex = ref(0)
@@ -377,17 +384,7 @@ const handleKeydown = (e: KeyboardEvent) => {
   if (e.key === 'ArrowLeft') previousImage()
 }
 
-onMounted(async () => {
-  try {
-    const response = await fetch(
-      `https://mebackend.roomcodetraining.com/api/realisations/${route.params.slug}`
-    )
-    const data = await response.json()
-    realisation.value = data.data
-  } catch (error) {
-    console.error('Erreur lors du chargement du projet:', error)
-  }
-
+onMounted(() => {
   window.addEventListener('keydown', handleKeydown)
 })
 

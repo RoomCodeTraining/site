@@ -17,7 +17,7 @@
                     <!-- Grille des réalisations avec nouveau design -->
                     <div class="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10 xl:grid-cols-2 relative z-10">
                         <div
-                          v-for="(realisation, index) in realisations"
+                          v-for="(realisation, index) in allRealisations"
                           :key="realisation.id"
                           class="group"
                           :style="{ '--index': index }"
@@ -44,19 +44,10 @@
 
 <script setup lang="ts">
 import SectionHeader from './SectionHeader.vue'
-import type { Realisation } from '~/types/realisation'
+import { allRealisations } from '~/data/realisations'
 
-const realisations = ref<Realisation[]>([])
-
-onMounted(async () => {
-    try {
-        const response = await fetch("https://mebackend.roomcodetraining.com/api/realisations")
-        const data = await response.json()
-        realisations.value = data.data
-    } catch (error) {
-        console.error("Erreur lors du chargement des réalisations:", error)
-    }
-})
+// Utiliser toutes les réalisations en grille simple
+const realisations = allRealisations
 </script>
 
 <style scoped>

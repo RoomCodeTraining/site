@@ -26,7 +26,6 @@ import ProjectManagement from '~/components/ProjectManagement.vue'
 import Recommendation from '~/components/Recommendation.vue'
 import Footer from '~/components/Footer.vue'
 </script>
-
 <style>
 body {
   font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;

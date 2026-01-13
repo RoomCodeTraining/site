@@ -130,8 +130,9 @@
                 style="animation-delay: 1s"
               >
                 <a
+                  @click.prevent="scrollToRealisations"
                   href="#realisations"
-                  class="group relative inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 overflow-hidden"
+                  class="group relative inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 overflow-hidden cursor-pointer"
                   aria-label="Découvrir mes projets"
                 >
                   <span class="relative z-10 flex items-center gap-2">
@@ -157,8 +158,9 @@
                 </a>
 
                 <a
+                  @click.prevent="scrollToContact"
                   href="#contact"
-                  class="group inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-400 hover:text-orange-500 dark:hover:text-orange-400 shadow-sm hover:shadow-md"
+                  class="group inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-400 hover:text-orange-500 dark:hover:text-orange-400 shadow-sm hover:shadow-md cursor-pointer"
                   aria-label="Me contacter"
                 >
                   <span>Me contacter</span>
@@ -295,6 +297,8 @@
 import { ref, onMounted } from 'vue'
 import avatarImage from '~/assets/images/moments/myavatar.jpeg'
 
+const route = useRoute()
+
 // État de visibilité pour les animations
 const isVisible = ref(false)
 
@@ -312,11 +316,49 @@ const stats = [
   { value: '100%', label: 'Engagé' },
 ]
 
+// Fonction pour naviguer vers la section réalisations
+const scrollToRealisations = () => {
+  if (route.path === '/') {
+    // Si on est déjà sur la page d'accueil, scroll vers la section
+    const element = document.querySelector('#realisations')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  } else {
+    // Sinon, rediriger vers la page d'accueil avec l'ancre
+    navigateTo('/#realisations')
+  }
+}
+
+// Fonction pour naviguer vers la section contact
+const scrollToContact = () => {
+  if (route.path === '/') {
+    // Si on est déjà sur la page d'accueil, scroll vers la section
+    const element = document.querySelector('#contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  } else {
+    // Sinon, rediriger vers la page d'accueil avec l'ancre
+    navigateTo('/#contact')
+  }
+}
+
 // Animation d'apparition
 onMounted(() => {
   setTimeout(() => {
     isVisible.value = true
   }, 100)
+
+  // Si on arrive sur la page avec une ancre dans l'URL, scroll vers la section
+  if (route.hash) {
+    setTimeout(() => {
+      const element = document.querySelector(route.hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 300)
+  }
 })
 </script>
 

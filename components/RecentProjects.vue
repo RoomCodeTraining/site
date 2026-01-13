@@ -3,18 +3,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative">
         <!-- Header -->
-        <div class="mb-8 sm:mb-12 text-center lg:text-left">
-          <h2
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 font-display"
-          >
-            Projets Récents
-          </h2>
-          <p
-            class="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto lg:mx-0"
-          >
-            Quelques exemples de solutions pratiques et utiles que j'ai développées.
-          </p>
-        </div>
+        <SectionHeader
+          title="Projets Récents"
+          subtitle="Quelques exemples de solutions pratiques et utiles que j'ai développées"
+        />
 
         <!-- Grille des projets récents -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
@@ -117,22 +109,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Realisation } from '~/types/realisation'
-
-const recentProjects = ref<Realisation[]>([])
-
-onMounted(async () => {
-  try {
-    const response = await fetch(
-      'https://mebackend.roomcodetraining.com/api/realisations'
-    )
-    const data = await response.json()
-    // Prendre les 2 premiers projets les plus récents
-    recentProjects.value = data.data.slice(0, 2)
-  } catch (error) {
-    console.error('Erreur lors du chargement des projets récents:', error)
-  }
-})
+import { recentProjects } from '~/data/realisations'
+import SectionHeader from './SectionHeader.vue'
 </script>
 
 <style scoped>

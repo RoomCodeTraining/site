@@ -4,16 +4,16 @@ import type { Experience } from '~/types/experience'
 export const useExperience = () => useState<Experience[]>('experiences', () => [
   {
             id: 1,
-            year: '2024-maintenant',
+            year: '2026-maintenant',
             post: "Chef Equipe Exploitation",
-            company: "ASACI TECHS",
+            company: "ASACI TECHNOLOGIES",
             description: "Promotion au poste de Chef d'équipe d'exploitation. Je suis maintenant responsable de la supervision et de la coordination de l'équipe technique. Je gère la maintenance des serveurs et des applications, tout en continuant à participer au développement de projets innovants.",
         },
         {
             id: 2,
-            year: '2021-2024',
+            year: '2021-2025',
             post: "Technicien d'exploitation & Développeur",
-            company: "ASACI TECHS",
+            company: "ASACI TECHNOLOGIES",
             description: "En tant que technicien d'exploitation, j'étais en charge de la maintenance des serveurs et des applications. En tant que développeur, je participais à la réalisation de projets innovants. Cette expérience m'a permis d'évoluer vers un poste de chef d'équipe.",
         },
         {
