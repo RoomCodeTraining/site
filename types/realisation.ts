@@ -8,4 +8,5 @@ export interface Realisation {
   images?: string[];
   application_link?: string;
   slug: string;
+  isPublic?: boolean;
 }

@@ -17,7 +17,7 @@
                     <!-- Grille des réalisations avec nouveau design -->
                     <div class="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10 xl:grid-cols-2 relative z-10">
                         <div
-                          v-for="(realisation, index) in allRealisations"
+                          v-for="(realisation, index) in visibleRealisations"
                           :key="realisation.id"
                           class="group"
                           :style="{ '--index': index }"
@@ -35,6 +35,25 @@
                           </NuxtLink>
                         </div>
                     </div>
+
+                    <!-- Bouton Voir plus / Voir moins -->
+                    <div v-if="allRealisations.length > initialCount" class="flex justify-center mt-10">
+                      <button
+                        @click="toggleShowAll"
+                        class="group inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-400 hover:text-orange-500 dark:hover:text-orange-400 shadow-sm hover:shadow-md"
+                      >
+                        <span>{{ showAll ? 'Voir moins' : 'Voir plus' }}</span>
+                        <svg
+                          class="w-5 h-5 transition-transform duration-300"
+                          :class="{ 'rotate-180': showAll }"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
                 </section>
 
             </div>
@@ -43,11 +62,20 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import SectionHeader from './SectionHeader.vue'
 import { allRealisations } from '~/data/realisations'
 
-// Utiliser toutes les réalisations en grille simple
-const realisations = allRealisations
+const initialCount = 4
+const showAll = ref(false)
+
+const visibleRealisations = computed(() => {
+  return showAll.value ? allRealisations : allRealisations.slice(0, initialCount)
+})
+
+const toggleShowAll = () => {
+  showAll.value = !showAll.value
+}
 </script>
 
 <style scoped>

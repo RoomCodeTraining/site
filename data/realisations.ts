@@ -13,8 +13,23 @@ import asaciMain from '~/assets/images/projects/asaci/main.png'
 import asaciCapture from '~/assets/images/projects/asaci/capture.png'
 import asaciCapture2 from '~/assets/images/projects/asaci/capture2.png'
 
+// Import des images Asa-Controller
+import asaControllerMain from '~/assets/images/projects/asa-controller/asa.png'
+
+// Import des images Payments
+import paymentMain from '~/assets/images/projects/payments/pay.png'
+
+// Import des images SMS
+import smsMain from '~/assets/images/projects/sms/main.png'
+
+// Import des images AMA
+import amaMain from '~/assets/images/projects/ama/main.jpeg'
+
 // Import des images Cantine
 import cantineMain from '~/assets/images/projects/cantine/main.png'
+import cantineCapture1 from '~/assets/images/projects/cantine/capture1.png'
+import cantineCapture2 from '~/assets/images/projects/cantine/capture2.png'
+import cantineCapture3 from '~/assets/images/projects/cantine/capture3.png'
 
 // Images WELINK
 const welinkImage = welinkLanding
@@ -38,14 +53,16 @@ const siteAsaciImages = [
 // Images Cantine
 const cantineImage = cantineMain
 const cantineImages = [
-  cantineMain
+  cantineCapture1,
+  cantineCapture2,
+  cantineCapture3
 ]
 
 const packageImage = '/images/package.jpg'
-const amaImage = '/images/ama.jpg'
-const asaControllerImage = '/images/controller.png'
-const letextoImage = '/images/letexto.jpg'
-const paymentImage = '/images/payment.jpg'
+const amaImage = amaMain
+const asaControllerImage = asaControllerMain
+const letextoImage = smsMain
+const paymentImage = paymentMain
 
 // Projets récents (pour RecentProjects)
 export const recentProjects: Realisation[] = [
@@ -53,22 +70,24 @@ export const recentProjects: Realisation[] = [
     id: 1,
     type: 'Entreprenariat',
     title: 'WELINK CI',
-    description: 'Plateforme de gestion et de connexion pour les entreprises en Côte d\'Ivoire. Solution complète pour faciliter les échanges et la collaboration entre entreprises.',
+    description: 'Plateforme B2B innovante connectant les entreprises ivoiriennes avec annuaire géolocalisé, dashboard de gestion et système de mise en relation.',
     technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
     main_image: welinkImage,
     images: welinkImages,
     slug: 'welink-ci',
-    application_link: 'https://welink.ci'
+    application_link: 'https://welink-ci.com',
+    isPublic: true
   },
   {
     id: 2,
     type: 'Open Source',
     title: 'Laravel Payment Gateways',
-    description: 'Package Laravel réutilisable pour gérer plusieurs agrégateurs de paiement (Cinetpay, Bizao, Winipayer) avec failover automatique, webhooks intégrés et configuration dynamique.',
+    description: 'Package Laravel unifiant plusieurs passerelles de paiement africaines (Cinetpay, Bizao, Winipayer) avec failover automatique et webhooks unifiés.',
     technologies: ['Laravel', 'PHP', 'Guzzle'],
     main_image: paymentImage,
     slug: 'laravel-payment-gateways',
-    application_link: 'https://packagist.org/packages/room/laravel-payment-gateways'
+    application_link: 'https://packagist.org/packages/room/laravel-payment-gateways',
+    isPublic: true
   }
 ]
 
@@ -79,12 +98,13 @@ export const realisationsByCategory = {
       id: 1,
       type: 'Entreprenariat',
       title: 'WELINK CI',
-      description: 'Plateforme de gestion et de connexion pour les entreprises en Côte d\'Ivoire. Solution complète pour faciliter les échanges et la collaboration entre entreprises.',
+      description: 'Plateforme B2B innovante connectant les entreprises ivoiriennes. WELINK CI offre un annuaire intelligent de commerces et pharmacies géolocalisés, un dashboard de gestion complet pour les professionnels, et un système de mise en relation facilité. Les fonctionnalités incluent : recherche avancée par catégorie et localisation, fiches entreprises détaillées avec horaires et services, système d\'avis et notations, gestion des commandes et réservations, et analytics pour les propriétaires. Le projet répond au besoin de digitalisation des PME en Côte d\'Ivoire.',
       technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
       main_image: welinkImage,
       images: welinkImages,
       slug: 'welink-ci',
-      application_link: 'https://welink.ci'
+      application_link: 'https://welink-ci.com',
+      isPublic: true
     }
   ],
   'FuturAfric': [
@@ -92,12 +112,13 @@ export const realisationsByCategory = {
       id: 3,
       type: 'Fullstack',
       title: 'Cantine Management',
-      description: 'Application de gestion de cantine pour entreprise. Cette application permet de gérer les repas des employés d\'une entreprise, la facturation et la gestion des commandes.',
+      description: 'Solution complète de gestion de restauration d\'entreprise développée pour FuturAfric. L\'application digitalise tout le processus de cantine : inscription des employés avec badges QR, planification des menus hebdomadaires, système de réservation de repas à l\'avance, suivi des consommations en temps réel, et facturation automatisée par département. Le dashboard administrateur offre des statistiques détaillées sur la fréquentation, les préférences alimentaires et les coûts. Intégration avec le système RH pour la gestion des droits et subventions repas.',
       technologies: ['Laravel', 'MySQL', 'JavaScript'],
       main_image: cantineImage,
       images: cantineImages,
       slug: 'cantine-management',
-      application_link: ''
+      application_link: '',
+      isPublic: false
     }
   ],
   'ASACI TECHNOLOGIES': [
@@ -105,32 +126,35 @@ export const realisationsByCategory = {
       id: 4,
       type: 'Frontend',
       title: 'Site ASACI',
-      description: 'Réalisation de la refonte du site de l\'Association des Sociétés d\'Assurances de Côte d\'Ivoire (ASACI). Interface moderne et responsive pour présenter les activités de l\'association.',
+      description: 'Refonte complète du site institutionnel de l\'Association des Sociétés d\'Assurances de Côte d\'Ivoire (ASACI), regroupant toutes les compagnies d\'assurance du pays. Le nouveau site présente une interface moderne et professionnelle avec : présentation des 28 sociétés membres, actualités du secteur assurantiel, statistiques du marché, espace documentaire (rapports annuels, études), annuaire des assureurs, et informations réglementaires. Design responsive optimisé pour une navigation fluide sur tous les appareils.',
       technologies: ['HTML', 'TailwindCSS', 'JavaScript'],
       main_image: siteAsaciImage,
       images: siteAsaciImages,
       slug: 'site-asaci',
-      application_link: ''
+      application_link: 'https://asaci.net',
+      isPublic: true
     },
     {
       id: 5,
       type: 'Mobile',
       title: 'AMA - Application Mobile de L\'assuré',
-      description: 'Application mobile permettant aux assurés de gérer leurs contrats d\'assurance, consulter leurs documents, effectuer des déclarations de sinistres et suivre leurs dossiers en temps réel.',
+      description: 'Application mobile native destinée aux assurés ivoiriens pour gérer leur vie assurantielle au quotidien. Fonctionnalités principales : consultation de tous les contrats d\'assurance (auto, santé, vie, habitation), téléchargement des attestations et cartes vertes, déclaration de sinistres avec photos et géolocalisation, suivi en temps réel de l\'état des dossiers, chat avec les gestionnaires, notifications push pour les échéances et remboursements. L\'app communique avec les systèmes de toutes les compagnies membres de l\'ASACI via une API centralisée.',
       technologies: ['React Native', 'Laravel', 'MySQL'],
       main_image: amaImage,
       slug: 'ama-application-mobile',
-      application_link: ''
+      application_link: '',
+      isPublic: false
     },
     {
       id: 6,
       type: 'Fullstack',
       title: 'Asa-Controller',
-      description: 'Plateforme de gestion des vérifications de la validité des assurances automobiles en Côte d\'Ivoire. Système permettant de contrôler et valider les polices d\'assurance automobile.',
+      description: 'Plateforme de contrôle et vérification des assurances automobiles en Côte d\'Ivoire, utilisée par les forces de l\'ordre et les agents de contrôle routier. Le système permet de scanner ou saisir un numéro d\'immatriculation pour vérifier instantanément la validité de l\'assurance du véhicule. Fonctionnalités : base de données centralisée de tous les contrats auto du pays, API de vérification en temps réel, historique des contrôles, génération de rapports statistiques, alertes pour les véhicules non assurés. Contribution majeure à la lutte contre la circulation sans assurance.',
       technologies: ['Laravel', 'MySQL', 'JavaScript'],
       main_image: asaControllerImage,
       slug: 'asa-controller',
-      application_link: ''
+      application_link: '',
+      isPublic: false
     }
   ],
   'Open Source': [
@@ -138,21 +162,23 @@ export const realisationsByCategory = {
       id: 7,
       type: 'PHP',
       title: 'letexto-sms-package',
-      description: 'Package PHP pour l\'envoi de SMS via l\'API Letexto. Support de l\'envoi simple et en masse, intégration Laravel native, gestion des erreurs et validation des numéros.',
+      description: 'Package PHP open source pour l\'intégration de l\'API SMS Letexto, un fournisseur majeur en Afrique de l\'Ouest. Le package offre : envoi de SMS unitaires et en masse (bulk), gestion des contacts et groupes, templates de messages personnalisables, validation automatique des numéros ivoiriens, gestion des erreurs et retry automatique, logs détaillés des envois. Intégration Laravel native avec façade, config publishable et commandes artisan. Plus de 500 installations sur Packagist.',
       technologies: ['PHP 8.0+', 'Guzzle', 'Laravel'],
       main_image: letextoImage,
       slug: 'letexto-sms-package',
-      application_link: 'https://packagist.org/packages/room/letexto-sms-package'
+      application_link: 'https://packagist.org/packages/room/letexto-sms-package',
+      isPublic: true
     },
     {
       id: 8,
       type: 'Laravel',
       title: 'laravel-payment-gateways',
-      description: 'Package Laravel réutilisable pour gérer plusieurs agrégateurs de paiement (Cinetpay, Bizao, Winipayer) avec failover automatique, webhooks intégrés et configuration dynamique.',
+      description: 'Package Laravel unifiant plusieurs passerelles de paiement africaines sous une interface unique. Agrégateurs supportés : Cinetpay, Bizao, Winipayer, avec architecture extensible pour ajouter d\'autres providers. Fonctionnalités avancées : failover automatique (bascule sur un autre provider en cas d\'échec), webhooks unifiés avec signature de sécurité, configuration dynamique par tenant, support multi-devises (XOF, XAF, EUR), logs et monitoring des transactions, mode sandbox pour les tests. Documentation complète et tests unitaires inclus.',
       technologies: ['Laravel 9+', 'PHP 8.1+', 'Guzzle'],
       main_image: paymentImage,
       slug: 'laravel-payment-gateways',
-      application_link: 'https://packagist.org/packages/room/laravel-payment-gateways'
+      application_link: 'https://packagist.org/packages/room/laravel-payment-gateways',
+      isPublic: true
     }
   ]
 }

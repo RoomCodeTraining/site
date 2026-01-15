@@ -3,6 +3,24 @@
     class="relative min-h-[90vh] sm:min-h-[85vh] bg-white dark:bg-slate-950 overflow-hidden"
     aria-label="Section principale - Portfolio"
   >
+    <!-- Animation Joyeux Anniversaire - légère -->
+    <Transition name="birthday-fade">
+      <div
+        v-if="showBirthday"
+        class="absolute top-4 right-4 z-50 pointer-events-none"
+      >
+        <div
+          class="birthday-badge px-4 py-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full shadow-lg border border-orange-200 dark:border-orange-500/30"
+        >
+          <span
+            class="text-sm sm:text-base font-medium text-slate-700 dark:text-slate-200"
+          >
+            🎂 Joyeux Anniversaire! 🎉
+          </span>
+        </div>
+      </div>
+    </Transition>
+
     <!-- Arrière-plan amélioré avec animations -->
     <div class="absolute inset-0" aria-hidden="true">
       <!-- Gradient animé -->
@@ -302,6 +320,18 @@ const route = useRoute()
 // État de visibilité pour les animations
 const isVisible = ref(false)
 
+// Animation anniversaire - seulement le 17 janvier
+const today = new Date()
+const isBirthday = today.getDate() === 17 && today.getMonth() === 0 // 0 = janvier
+const showBirthday = ref(true) // TODO: remettre isBirthday après test
+
+// Fermer l'animation après quelques secondes
+if (isBirthday) {
+  setTimeout(() => {
+    showBirthday.value = false
+  }, 5000)
+}
+
 // Rôles avec classes
 const roles = [
   { text: 'Tech Leader', class: 'text-slate-900 dark:text-white' },
@@ -501,6 +531,31 @@ onMounted(() => {
 
 .animate-scroll {
   animation: scroll 2s ease-in-out infinite;
+}
+
+/* Animation anniversaire légère */
+.birthday-fade-enter-active,
+.birthday-fade-leave-active {
+  transition: all 0.5s ease;
+}
+.birthday-fade-enter-from,
+.birthday-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.birthday-badge {
+  animation: birthday-float 2s ease-in-out infinite;
+}
+
+@keyframes birthday-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Support reduced motion */
