@@ -10,13 +10,18 @@
         class="absolute top-4 right-4 z-50 pointer-events-none"
       >
         <div
-          class="birthday-badge px-4 py-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full shadow-lg border border-orange-200 dark:border-orange-500/30"
+          class="birthday-badge bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-400 dark:to-orange-500 rounded-2xl shadow-2xl shadow-orange-500/30 overflow-hidden"
         >
-          <span
-            class="text-sm sm:text-base font-medium text-slate-700 dark:text-slate-200"
-          >
-            🎂 Joyeux Anniversaire! 🎉
-          </span>
+          <div class="px-5 py-4 flex items-center gap-4">
+            <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
+              <span class="text-3xl font-black text-white">{{ age }}</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/80 text-xs font-medium uppercase tracking-widest">Joyeux</span>
+              <span class="text-white text-lg font-bold -mt-0.5">Anniversaire</span>
+            </div>
+            <span class="text-2xl ml-1">🎂</span>
+          </div>
         </div>
       </div>
     </Transition>
@@ -322,8 +327,19 @@ const isVisible = ref(false)
 
 // Animation anniversaire - seulement le 17 janvier
 const today = new Date()
+const birthDate = new Date(1999, 0, 17) // 17 janvier 1999
 const isBirthday = today.getDate() === 17 && today.getMonth() === 0 // 0 = janvier
 const showBirthday = ref(true) // TODO: remettre isBirthday après test
+
+// Calcul de l'âge
+const age = computed(() => {
+  let years = today.getFullYear() - birthDate.getFullYear()
+  const monthDiff = today.getMonth() - birthDate.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    years--
+  }
+  return years
+})
 
 // Fermer l'animation après quelques secondes
 if (isBirthday) {
