@@ -13,12 +13,21 @@
           class="birthday-badge bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-400 dark:to-orange-500 rounded-2xl shadow-2xl shadow-orange-500/30 overflow-hidden"
         >
           <div class="px-5 py-4 flex items-center gap-4">
-            <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
-              <span class="text-3xl font-black text-white">{{ age }}</span>
+            <div class="relative w-16 h-16 rounded-xl overflow-hidden ring-2 ring-white/30 shadow-lg">
+              <img 
+                :src="avatarImage" 
+                alt="Avatar" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col flex-1">
               <span class="text-white/80 text-xs font-medium uppercase tracking-widest">Joyeux</span>
               <span class="text-white text-lg font-bold -mt-0.5">Anniversaire</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-3xl font-black text-white leading-none">{{ age }}</span>
+              <span class="text-white/70 text-xs font-medium">ans</span>
             </div>
             <span class="text-2xl ml-1">🎂</span>
           </div>
