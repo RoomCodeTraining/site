@@ -14,9 +14,9 @@
         >
           <div class="px-5 py-4 flex items-center gap-4">
             <div class="relative w-16 h-16 rounded-xl overflow-hidden ring-2 ring-white/30 shadow-lg">
-              <img 
-                :src="avatarImage" 
-                alt="Avatar" 
+              <img
+                :src="avatarImage"
+                alt="Avatar"
                 class="w-full h-full object-cover"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
@@ -366,7 +366,7 @@ const roles = [
 
 // Statistiques
 const stats = [
-  { value: '10+', label: 'Années' },
+  { value: '5+', label: 'Années' },
   { value: '50+', label: 'Projets' },
   { value: '100%', label: 'Engagé' },
 ]
