@@ -3,38 +3,6 @@
     class="relative min-h-[90vh] sm:min-h-[85vh] bg-white dark:bg-slate-950 overflow-hidden"
     aria-label="Section principale - Portfolio"
   >
-    <!-- Animation Joyeux Anniversaire - légère -->
-    <Transition name="birthday-fade">
-      <div
-        v-if="showBirthday"
-        class="absolute top-4 right-4 z-50 pointer-events-none"
-      >
-        <div
-          class="birthday-badge bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-400 dark:to-orange-500 rounded-2xl shadow-2xl shadow-orange-500/30 overflow-hidden"
-        >
-          <div class="px-5 py-4 flex items-center gap-4">
-            <div class="relative w-16 h-16 rounded-xl overflow-hidden ring-2 ring-white/30 shadow-lg">
-              <img
-                :src="avatarImage"
-                alt="Avatar"
-                class="w-full h-full object-cover"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
-            </div>
-            <div class="flex flex-col flex-1">
-              <span class="text-white/80 text-xs font-medium uppercase tracking-widest">Joyeux</span>
-              <span class="text-white text-lg font-bold -mt-0.5">Anniversaire</span>
-            </div>
-            <div class="flex flex-col items-center">
-              <span class="text-3xl font-black text-white leading-none">{{ age }}</span>
-              <span class="text-white/70 text-xs font-medium">ans</span>
-            </div>
-            <span class="text-2xl ml-1">🎂</span>
-          </div>
-        </div>
-      </div>
-    </Transition>
-
     <!-- Arrière-plan amélioré avec animations -->
     <div class="absolute inset-0" aria-hidden="true">
       <!-- Gradient animé -->
@@ -274,7 +242,8 @@
                 <div
                   class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-full p-1 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 dark:from-orange-400 dark:via-orange-300 dark:to-orange-500 shadow-2xl transform transition-all duration-500 hover:scale-105"
                   style="
-                    box-shadow: 0 0 40px rgba(249, 115, 22, 0.3),
+                    box-shadow:
+                      0 0 40px rgba(249, 115, 22, 0.3),
                       0 0 80px rgba(249, 115, 22, 0.15);
                   "
                 >
@@ -333,29 +302,6 @@ const route = useRoute()
 
 // État de visibilité pour les animations
 const isVisible = ref(false)
-
-// Animation anniversaire - seulement le 17 janvier
-const today = new Date()
-const birthDate = new Date(1999, 0, 17) // 17 janvier 1999
-const isBirthday = today.getDate() === 17 && today.getMonth() === 0 // 0 = janvier
-const showBirthday = ref(true) // TODO: remettre isBirthday après test
-
-// Calcul de l'âge
-const age = computed(() => {
-  let years = today.getFullYear() - birthDate.getFullYear()
-  const monthDiff = today.getMonth() - birthDate.getMonth()
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-    years--
-  }
-  return years
-})
-
-// Fermer l'animation après quelques secondes
-if (isBirthday) {
-  setTimeout(() => {
-    showBirthday.value = false
-  }, 5000)
-}
 
 // Rôles avec classes
 const roles = [
@@ -556,31 +502,6 @@ onMounted(() => {
 
 .animate-scroll {
   animation: scroll 2s ease-in-out infinite;
-}
-
-/* Animation anniversaire légère */
-.birthday-fade-enter-active,
-.birthday-fade-leave-active {
-  transition: all 0.5s ease;
-}
-.birthday-fade-enter-from,
-.birthday-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.birthday-badge {
-  animation: birthday-float 2s ease-in-out infinite;
-}
-
-@keyframes birthday-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
 }
 
 /* Support reduced motion */

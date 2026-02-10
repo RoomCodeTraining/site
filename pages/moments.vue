@@ -216,6 +216,8 @@ import prix from '~/assets/images/moments/prix.jpg'
 import selfieFuturafric from '~/assets/images/moments/selfie_with_futurafric_ceo.jpg'
 import myavatar from '~/assets/images/moments/myavatar.jpeg'
 import moment1747830225745 from '~/assets/images/moments/1747830225745.jpeg'
+import fanaf1 from '~/assets/images/moments/fanaf1.jpeg'
+import fanaf2 from '~/assets/images/moments/fanaf2.jpeg'
 
 interface Moment {
   image: string
@@ -354,6 +356,18 @@ moments.value = [
     title: 'Moment fort',
     description: 'Un instant mémorable',
     date: '2024',
+  },
+  {
+    image: fanaf1,
+    title: 'FANAF 2026',
+    description: "Événement en Côte d'Ivoire",
+    date: '2026',
+  },
+  {
+    image: fanaf2,
+    title: 'FANAF 2026',
+    description: "Événement en Côte d'Ivoire",
+    date: '2026',
   },
 ]
 

@@ -29,57 +29,55 @@
                     <article
                         v-for="article in filteredArticles"
                         :key="article.id"
-                        class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
+                        class="group flex flex-col h-full bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
                     >
                         <!-- Image de l'article -->
-                        <div class="relative h-48 overflow-hidden">
+                        <div class="relative h-48 flex-shrink-0 overflow-hidden">
                             <img
                                 :src="article.image"
                                 :alt="article.title"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             />
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 left-4">
-                                <span class="px-3 py-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs rounded-lg font-medium">
+                            <div class="absolute top-3 left-3 flex items-center gap-2">
+                                <span class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-slate-900/95 text-slate-700 dark:text-slate-200 text-xs font-medium backdrop-blur-sm">
                                     {{ article.category }}
                                 </span>
-                            </div>
-                            <div class="absolute top-4 right-4">
-                                <span class="px-3 py-1 bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 text-xs rounded-full">
+                                <span class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-slate-900/95 text-slate-600 dark:text-slate-400 text-xs font-medium backdrop-blur-sm">
                                     {{ article.readTime }} min
                                 </span>
                             </div>
                         </div>
 
                         <!-- Contenu de l'article -->
-                        <div class="p-4 sm:p-6">
-                            <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
+                        <div class="p-4 sm:p-6 flex flex-col flex-1 min-h-0">
+                            <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap flex-shrink-0">
                                 <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{{ article.date }}</span>
                                 <span class="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
                                 <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{{ article.author }}</span>
                             </div>
 
-                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-200">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-200 flex-shrink-0">
                                 {{ article.title }}
                             </h3>
 
-                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 leading-relaxed">
+                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 leading-relaxed flex-shrink-0">
                                 {{ article.excerpt }}
                             </p>
 
                             <!-- Tags -->
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6 tags-wrap flex-shrink-0">
                                 <span
                                     v-for="tag in article.tags"
                                     :key="tag"
-                                    class="px-2 py-0.5 sm:py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full"
+                                    class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium"
                                 >
-                                    #{{ tag }}
+                                    {{ tag }}
                                 </span>
                             </div>
 
-                            <!-- Actions -->
-                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                            <!-- Actions (toujours en bas du cadre) -->
+                            <div class="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 pt-2 border-t border-slate-100 dark:border-slate-800">
                                 <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                                     <div class="flex items-center gap-1">
                                         <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,15 +93,15 @@
                                         <span>{{ article.comments }}</span>
                                     </div>
                                 </div>
-                                <a
-                                    :href="article.url"
+                                <NuxtLink
+                                    :to="article.url"
                                     class="inline-flex items-center gap-1.5 sm:gap-2 text-orange-600 dark:text-orange-400 font-medium text-xs sm:text-sm hover:gap-2 sm:hover:gap-3 transition-all duration-200"
                                 >
                                     Lire l'article
                                     <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                     </svg>
-                                </a>
+                                </NuxtLink>
                             </div>
                         </div>
                     </article>
@@ -118,92 +116,92 @@ import SectionHeader from './SectionHeader.vue'
 
 const activeCategory = ref('Tous')
 
-const categories = ['Tous', 'Apprentissage', 'Méthodologie', 'Culture Dev', 'Tutoriels']
+const categories = ['Tous', 'Méthodologie', 'Tutoriels']
 
 const articles = [
     {
         id: 1,
-        title: "Maîtriser Vue 3 Composition API",
-        excerpt: "Guide complet pour comprendre et utiliser efficacement la Composition API de Vue 3 dans vos projets.",
-        category: 'Apprentissage',
+        title: "Clean Code : écrire du code lisible et maintenable",
+        excerpt: "Principes et pratiques pour produire un code propre, facile à lire et à faire évoluer.",
+        category: 'Méthodologie',
         author: 'Roger DA',
-        date: '15 Déc 2024',
-        readTime: 8,
-        views: '1.2k',
-        comments: 23,
-        tags: ['Vue3', 'Composition API', 'JavaScript'],
-        image: '~/assets/images/vue.png',
-        url: '/blog/vue3-composition-api'
+        date: '10 Fév 2026',
+        readTime: 10,
+        views: '1.1k',
+        comments: 18,
+        tags: ['Clean Code', 'Qualité', 'Maintenabilité'],
+        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
+        url: '/blog/clean-code'
     },
     {
         id: 2,
-        title: "Bonnes pratiques Laravel en 2024",
-        excerpt: "Les meilleures pratiques et patterns pour développer des applications Laravel robustes et maintenables.",
-        category: 'Méthodologie',
+        title: "Cursor pour vos scripts Python",
+        excerpt: "Utiliser Cursor comme IDE pour écrire, déboguer et maintenir vos scripts Python au quotidien.",
+        category: 'Tutoriels',
         author: 'Roger DA',
-        date: '10 Déc 2024',
-        readTime: 12,
-        views: '2.1k',
-        comments: 45,
-        tags: ['Laravel', 'PHP', 'Architecture'],
-        image: '~/assets/images/laravel.png',
-        url: '/blog/laravel-best-practices'
+        date: '10 Fév 2026',
+        readTime: 8,
+        views: '890',
+        comments: 12,
+        tags: ['Cursor', 'Python', 'Productivité'],
+        image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&q=80',
+        url: '/blog/cursor-python'
     },
     {
         id: 3,
-        title: "Développer avec TypeScript et Nuxt 3",
-        excerpt: "Comment tirer parti de TypeScript dans vos projets Nuxt 3 pour un code plus sûr et maintenable.",
-        category: 'Tutoriels',
+        title: "Types d'ID en base : performance et bonne approche",
+        excerpt: "Choix des types d'identifiants (entier, UUID, ULID) en base de données : impact performance et bonnes pratiques.",
+        category: 'Méthodologie',
         author: 'Roger DA',
-        date: '5 Déc 2024',
+        date: '10 Fév 2026',
         readTime: 10,
-        views: '1.8k',
-        comments: 31,
-        tags: ['Nuxt3', 'TypeScript', 'Vue3'],
-        image: '~/assets/images/nuxt.png',
-        url: '/blog/nuxt3-typescript'
+        views: '950',
+        comments: 15,
+        tags: ['Base de données', 'Performance', 'UUID', 'ULID'],
+        image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&q=80',
+        url: '/blog/types-id-base'
     },
     {
         id: 4,
-        title: "Optimisation des performances web",
-        excerpt: "Techniques avancées pour améliorer les performances de vos applications web et l'expérience utilisateur.",
-        category: 'Méthodologie',
+        title: "DDEV pour un environnement Docker propre",
+        excerpt: "Environnement Docker propre et reproductible avec DDEV. Comparaison avec Laravel Sail.",
+        category: 'Tutoriels',
         author: 'Roger DA',
-        date: '1 Déc 2024',
-        readTime: 15,
-        views: '3.2k',
-        comments: 67,
-        tags: ['Performance', 'Optimisation', 'Web'],
-        image: '~/assets/images/controller.png',
-        url: '/blog/web-performance'
+        date: '10 Fév 2026',
+        readTime: 11,
+        views: '820',
+        comments: 11,
+        tags: ['DDEV', 'Sail', 'Docker', 'Laravel', 'Dev local'],
+        image: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=600&q=80',
+        url: '/blog/ddev-environnement-docker'
     },
     {
         id: 5,
-        title: "Architecture des applications modernes",
-        excerpt: "Principes et patterns d'architecture pour construire des applications scalables et évolutives.",
-        category: 'Culture Dev',
+        title: "Laravel Scribe : documenter vos APIs simplement",
+        excerpt: "Générer une documentation d'API claire et à jour pour vos projets Laravel avec Scribe.",
+        category: 'Tutoriels',
         author: 'Roger DA',
-        date: '28 Nov 2024',
-        readTime: 6,
-        views: '1.5k',
-        comments: 28,
-        tags: ['Architecture', 'Design Patterns', 'Scalabilité'],
-        image: '~/assets/images/realisation.png',
-        url: '/blog/modern-architecture'
+        date: '10 Fév 2026',
+        readTime: 9,
+        views: '760',
+        comments: 9,
+        tags: ['Laravel', 'Scribe', 'API', 'Documentation'],
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+        url: '/blog/laravel-scribe'
     },
     {
         id: 6,
-        title: "Sécurité dans le développement web",
-        excerpt: "Les fondamentaux de la sécurité web et comment protéger vos applications contre les vulnérabilités courantes.",
-        category: 'Tutoriels',
+        title: "Solutions de paiement en Afrique : intégration et défis",
+        excerpt: "Intégrer les paiements (mobile money, cartes, passerelles) en Afrique : acteurs, techniques et pièges à éviter.",
+        category: 'Méthodologie',
         author: 'Roger DA',
-        date: '25 Nov 2024',
-        readTime: 18,
-        views: '2.7k',
-        comments: 52,
-        tags: ['Sécurité', 'Web', 'Protection'],
-        image: '~/assets/images/larapass.png',
-        url: '/blog/web-security'
+        date: '10 Fév 2026',
+        readTime: 12,
+        views: '1.2k',
+        comments: 22,
+        tags: ['Paiement', 'Afrique', 'Mobile Money', 'Intégration'],
+        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
+        url: '/blog/paiement-afrique'
     }
 ]
 
@@ -252,6 +250,13 @@ const filteredArticles = computed(() => {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Zone tags : hauteur max pour garder les cadres alignés */
+.tags-wrap {
+    min-height: 2.5rem;
+    max-height: 3.5rem;
     overflow: hidden;
 }
 </style>

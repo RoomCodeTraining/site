@@ -6,13 +6,13 @@
   <Footer />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Header from '~/components/Header.vue'
 import Blog from '~/components/Blog.vue'
 import Footer from '~/components/Footer.vue'
 </script>
 
-<style>
+<style scoped>
 body {
   font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
   font-weight: 400;
