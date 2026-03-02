@@ -8,12 +8,6 @@ import welinkCommerces from '~/assets/images/projects/welink/commerces.png'
 import welinkPharmacies from '~/assets/images/projects/welink/pharmacies.png'
 import welinkLogin from '~/assets/images/projects/welink/login.png'
 
-// Import des images BAARO (Archives WeLink)
-import baaroScreen1 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.27.39.png'
-import baaroScreen2 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.27.50.png'
-import baaroScreen3 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.28.02.png'
-import baaroScreen4 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.40.11.png'
-
 // Import des images ASACI
 import asaciMain from '~/assets/images/projects/asaci/main.png'
 import asaciCapture from '~/assets/images/projects/asaci/capture.png'
@@ -45,12 +39,17 @@ const welinkImages = [
   welinkCommerce,
   welinkCommerces,
   welinkPharmacies,
-  welinkLogin
+  welinkLogin,
 ]
 
-// Images BAARO (Archives WeLink)
-const baaroImages = [baaroScreen1, baaroScreen2, baaroScreen3, baaroScreen4]
-const baaroImage = baaroScreen1
+// Images BAARO (Archives WeLink) - chargement dynamique de toutes les captures disponibles
+const baaroImagesGlob = import.meta.glob('~/assets/images/projects/baaro/*.{png,jpg,jpeg}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>
+
+const baaroImages = Object.values(baaroImagesGlob)
+const baaroImage = baaroImages[0] ?? ''
 
 // Images ASACI
 const siteAsaciImage = asaciMain
