@@ -8,6 +8,12 @@ import welinkCommerces from '~/assets/images/projects/welink/commerces.png'
 import welinkPharmacies from '~/assets/images/projects/welink/pharmacies.png'
 import welinkLogin from '~/assets/images/projects/welink/login.png'
 
+// Import des images BAARO (Archives WeLink)
+import baaroScreen1 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.27.39.png'
+import baaroScreen2 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.27.50.png'
+import baaroScreen3 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.28.02.png'
+import baaroScreen4 from '~/assets/images/projects/baaro/Capture d’écran 2026-03-02 à 11.40.11.png'
+
 // Import des images ASACI
 import asaciMain from '~/assets/images/projects/asaci/main.png'
 import asaciCapture from '~/assets/images/projects/asaci/capture.png'
@@ -41,6 +47,10 @@ const welinkImages = [
   welinkPharmacies,
   welinkLogin
 ]
+
+// Images BAARO (Archives WeLink)
+const baaroImages = [baaroScreen1, baaroScreen2, baaroScreen3, baaroScreen4]
+const baaroImage = baaroScreen1
 
 // Images ASACI
 const siteAsaciImage = asaciMain
@@ -80,13 +90,15 @@ export const recentProjects: Realisation[] = [
   },
   {
     id: 2,
-    type: 'Open Source',
-    title: 'Laravel Payment Gateways',
-    description: 'Package Laravel unifiant plusieurs passerelles de paiement africaines (Cinetpay, Bizao, Winipayer) avec failover automatique et webhooks unifiés.',
-    technologies: ['Laravel', 'PHP', 'Guzzle'],
-    main_image: paymentImage,
-    slug: 'laravel-payment-gateways',
-    application_link: 'https://packagist.org/packages/room/laravel-payment-gateways',
+    type: 'Entreprenariat',
+    title: 'Baaro',
+    description:
+      "Application web d'archives et de gestion de documents avec interface moderne et assistant IA, développée dans l'écosystème WeLink CI.",
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
+    main_image: baaroImage,
+    images: baaroImages,
+    slug: 'baaro-archives',
+    application_link: 'https://archive.welink-ci.com/',
     isPublic: true
   }
 ]
@@ -104,6 +116,19 @@ export const realisationsByCategory = {
       images: welinkImages,
       slug: 'welink-ci',
       application_link: 'https://welink-ci.com',
+      isPublic: true
+    },
+    {
+      id: 2,
+      type: 'Entreprenariat',
+      title: 'Baaro',
+      description:
+        "Application web d'archives et de gestion de documents pour organiser, stocker et interroger des fichiers (Word, PDF, images) avec un assistant IA spécialisé. L’interface propose un tableau de bord clair, une section Documents avec tags et métadonnées, un assistant IA pour poser des questions sur les contenus importés, et des paramètres adaptés aux besoins des équipes. Le projet s’inscrit dans la suite de solutions WeLink pour la digitalisation des entreprises africaines.",
+      technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
+      main_image: baaroImage,
+      images: baaroImages,
+      slug: 'baaro-archives',
+      application_link: 'https://archive.welink-ci.com/',
       isPublic: true
     }
   ],
