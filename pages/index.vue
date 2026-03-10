@@ -2,11 +2,11 @@
   <div
     class="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-100 dark:from-slate-950 dark:via-slate-900 dark:to-rose-950 text-slate-900 dark:text-slate-50"
   >
-    <main class="pt-16 sm:pt-20 pb-16">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="pt-10 sm:pt-16 pb-12 sm:pb-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
         <!-- Hero -->
         <section
-          class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start mb-12 sm:mb-16"
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start"
         >
           <!-- Identité -->
           <div class="md:col-span-2 space-y-4">
@@ -38,7 +38,7 @@
 
           <!-- Photo + Contact -->
           <aside class="w-full md:justify-self-end">
-            <div class="flex flex-col items-center gap-4">
+            <div class="flex flex-col items-center md:items-end gap-4">
               <!-- Photo -->
               <div
                 class="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-2xl overflow-hidden shadow-xl ring-4 ring-rose-100 dark:ring-rose-900/60"
@@ -100,9 +100,9 @@
         </section>
 
         <!-- Contenu principal -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           <!-- Colonne gauche : Compétences & Qualités -->
-          <div class="space-y-8">
+          <div class="space-y-6 sm:space-y-8">
             <!-- Compétences -->
             <div
               class="bg-white/80 dark:bg-slate-900/90 backdrop-blur rounded-2xl p-5 sm:p-6 border border-slate-100 dark:border-slate-800"

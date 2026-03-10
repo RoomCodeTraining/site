@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   plugins : [
-    { src : '~/plugins/woot', mode : 'client' },
   ],
   modules: [
       '@nuxtjs/tailwindcss',
