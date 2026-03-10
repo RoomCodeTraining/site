@@ -31,6 +31,12 @@ import cantineCapture1 from '~/assets/images/projects/cantine/capture1.png'
 import cantineCapture2 from '~/assets/images/projects/cantine/capture2.png'
 import cantineCapture3 from '~/assets/images/projects/cantine/capture3.png'
 
+// Import des images Ivoire Stock
+import ivoireStockDashboard from '~/assets/images/projects/ivoirestock/dashboard.png'
+import ivoireStockRegister from '~/assets/images/projects/ivoirestock/register.png'
+import ivoireStockLogin from '~/assets/images/projects/ivoirestock/login.png'
+import ivoireStockMouvement from '~/assets/images/projects/ivoirestock/mouvement.png'
+
 // Images WELINK
 const welinkImage = welinkLanding
 const welinkImages = [
@@ -65,6 +71,15 @@ const cantineImages = [
   cantineCapture1,
   cantineCapture2,
   cantineCapture3
+]
+
+// Images Ivoire Stock
+const ivoireStockImage = ivoireStockDashboard
+const ivoireStockImages = [
+  ivoireStockDashboard,
+  ivoireStockRegister,
+  ivoireStockLogin,
+  ivoireStockMouvement,
 ]
 
 const packageImage = '/images/package.jpg'
@@ -128,6 +143,19 @@ export const realisationsByCategory = {
       images: baaroImages,
       slug: 'baaro-archives',
       application_link: 'https://archive.welink-ci.com/',
+      isPublic: true
+    },
+    {
+      id: 3,
+      type: 'SaaS',
+      title: 'Ivoire Stock',
+      description:
+        "Solution SaaS de gestion d'inventaire moderne pour PME et ETI, pensée pour la visibilité temps réel des stocks multi-entrepôts sans la complexité d’un ERP. Ivoire Stock permet de suivre les produits par entrepôt et par site, de tracer tous les mouvements (entrées, sorties, transferts) et d’analyser l’activité grâce à des tableaux de bord lisibles (produits actifs, alertes de stock bas, tendances des mouvements, capacité des entrepôts). L’application est conçue pour les équipes opérations et terrain : structure des produits par catégorie et emplacement, enregistrement simplifié des mouvements (prêt pour le scan code-barres), rapports exportables et scénarios d’usage pour la construction, les services IT, la logistique et les PME industrielles.",
+      technologies: ['Laravel', 'Vue.js', 'TailwindCSS', 'MySQL'],
+      main_image: ivoireStockImage,
+      images: ivoireStockImages,
+      slug: 'ivoire-stock',
+      application_link: 'http://stock.welink-ci.com',
       isPublic: true
     }
   ],

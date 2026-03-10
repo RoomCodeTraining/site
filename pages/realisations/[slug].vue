@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <div class="min-h-screen bg-white dark:bg-slate-950 pt-20">
+    <div class="min-h-screen bg-white dark:bg-slate-950 pt-20">
       <!-- Hero Section avec image principale -->
       <div class="relative">
         <div
@@ -14,20 +14,97 @@
           />
           <!-- Overlay gradient -->
           <div
-            class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-950 via-white/80 dark:via-slate-950/80 to-transparent"
+            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent dark:from-slate-950 dark:via-slate-950/70 dark:to-transparent"
           ></div>
-          <!-- Badge type -->
-          <div
-            v-if="realisation.type"
-            class="absolute top-4 left-4 sm:top-8 sm:left-8 px-3 py-1.5 sm:px-5 sm:py-2.5 bg-orange-500 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-sm"
-          >
-            {{ realisation.type }}
+
+          <!-- Contenu hero dans l'image -->
+          <div class="absolute inset-x-0 bottom-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-10">
+              <div
+                class="max-w-3xl flex flex-col gap-3 sm:gap-4 text-white"
+              >
+                <!-- Badge type + public -->
+                <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span
+                    v-if="realisation.type"
+                    class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 text-xs sm:text-sm font-semibold backdrop-blur"
+                  >
+                    {{ realisation.type }}
+                  </span>
+                  <span
+                    v-if="realisation.isPublic && realisation.application_link"
+                    class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-500/90 text-xs sm:text-sm font-semibold"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-100"></span>
+                    En ligne
+                  </span>
+                </div>
+
+                <!-- Titre & sous-titre -->
+                <h1
+                  class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-display leading-tight"
+                >
+                  {{ realisation.title }}
+                </h1>
+                <p
+                  class="text-sm sm:text-base md:text-lg text-slate-100/90 max-w-2xl"
+                >
+                  {{ shortDescription }}
+                </p>
+
+                <!-- Meta : techno / lien -->
+                <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-100/80">
+                  <div
+                    v-if="realisation.technologies && realisation.technologies.length"
+                    class="flex flex-wrap items-center gap-1.5"
+                  >
+                    <span class="text-slate-300/80">Tech :</span>
+                    <span
+                      v-for="tech in realisation.technologies.slice(0, 3)"
+                      :key="tech"
+                      class="px-2.5 py-1 rounded-full bg-white/10 text-slate-50"
+                    >
+                      {{ tech }}
+                    </span>
+                    <span
+                      v-if="realisation.technologies.length > 3"
+                      class="px-2.5 py-1 rounded-full bg-white/5 text-slate-200/80"
+                    >
+                      +{{ realisation.technologies.length - 3 }}
+                    </span>
+                  </div>
+
+                  <a
+                    v-if="realisation.application_link"
+                    :href="realisation.application_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full bg-orange-500 hover:bg-orange-400 text-xs sm:text-sm font-semibold shadow-lg shadow-orange-500/30 transition-colors"
+                  >
+                    Voir le projet
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Contenu hero -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 sm:-mt-24 md:-mt-32 relative z-10">
-          <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 dark:border-slate-800">
+        <!-- Contenu hero (breadcrumb) -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-6 relative z-10">
+          <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200/70 dark:border-slate-800/70">
           <!-- Breadcrumb -->
           <nav class="mb-6" aria-label="Breadcrumb">
             <ol class="flex items-center space-x-2 text-sm">
@@ -81,15 +158,9 @@
             </ol>
           </nav>
 
-          <!-- Titre -->
-          <h1
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 font-display leading-tight"
-          >
-            {{ realisation.title }}
-          </h1>
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- Contenu principal -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -349,6 +420,12 @@ const found = allRealisations.find(r => r.slug === route.params.slug)
 if (found) {
   realisation.value = found
 }
+
+const shortDescription = computed(() => {
+  if (!realisation.value?.description) return ''
+  const text = realisation.value.description.replace(/<[^>]+>/g, '')
+  return text.length > 180 ? text.slice(0, 180).trimEnd() + '…' : text
+})
 
 const lightboxOpen = ref(false)
 const currentImageIndex = ref(0)
