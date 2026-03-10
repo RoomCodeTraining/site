@@ -24,7 +24,7 @@
               >
             </h1>
             <p
-              class="text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl"
+              class="text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl text-justify"
             >
               Souhaitant mettre mes compétences au service d’une entreprise
               dynamique et contribuer activement à son développement, tout en
@@ -114,7 +114,7 @@
                 Compétences
               </h2>
               <ul
-                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300"
+                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300 text-justify"
               >
                 <li>Accueil</li>
                 <li>Gestion administrative</li>
@@ -135,7 +135,7 @@
                 Qualités
               </h2>
               <ul
-                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300"
+                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300 text-justify"
               >
                 <li>Excellentes compétences en communication et relationnelle</li>
                 <li>Leadership fort et dynamique</li>
@@ -155,7 +155,7 @@
                 Atouts personnels
               </h2>
               <ul
-                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300"
+                class="space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300 text-justify"
               >
                 <li>Français : niveau excellent</li>
                 <li>Anglais : niveau moyen</li>
@@ -177,7 +177,7 @@
                 <span class="w-1.5 h-6 bg-rose-500 rounded-full"></span>
                 Expériences professionnelles
               </h2>
-              <div class="relative pl-4 sm:pl-6 border-l-2 border-rose-100 dark:border-rose-900/40 space-y-5">
+              <div class="relative pl-4 sm:pl-6 border-l-2 border-rose-100 dark:border-rose-900/40 space-y-5 text-justify">
                 <div
                   v-for="(exp, index) in experiences"
                   :key="exp.id"
@@ -210,7 +210,7 @@
                 <span class="w-1.5 h-6 bg-rose-500 rounded-full"></span>
                 Formations &amp; diplômes
               </h2>
-              <div class="relative pl-4 sm:pl-6 border-l-2 border-rose-100 dark:border-rose-900/40 space-y-5">
+              <div class="relative pl-4 sm:pl-6 border-l-2 border-rose-100 dark:border-rose-900/40 space-y-5 text-justify">
                 <div
                   v-for="(edu, index) in formations"
                   :key="edu.id"
