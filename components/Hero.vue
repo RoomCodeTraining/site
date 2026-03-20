@@ -116,9 +116,9 @@
                 class="text-base sm:text-lg md:text-lg lg:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto sm:mx-0 animate-slide-in font-medium"
                 style="animation-delay: 0.8s"
               >
-                Je construis des solutions numériques qui répondent aux défis
-                d'aujourd'hui avec une vision pragmatique et tournée vers
-                l'innovation locale.
+                Je conçois des SaaS qui font gagner de l’argent.
+                J’optimise vos opérations, je réduis les frictions côté client,
+                et je vous donne des indicateurs clairs pour décider vite.
               </p>
             </Transition>
 
@@ -132,11 +132,11 @@
                 <a
                   @click.prevent="scrollToRealisations"
                   href="#realisations"
-                  class="group relative inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 overflow-hidden cursor-pointer"
-                  aria-label="Découvrir mes projets"
+                  class="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 overflow-hidden cursor-pointer whitespace-nowrap leading-none"
+                  aria-label="Voir des cas concrets"
                 >
-                  <span class="relative z-10 flex items-center gap-2">
-                    <span>Découvrir mes projets</span>
+                  <span class="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                    <span>Voir des cas concrets</span>
                     <svg
                       class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -158,12 +158,13 @@
                 </a>
 
                 <a
-                  @click.prevent="scrollToContact"
-                  href="#contact"
-                  class="group inline-flex items-center justify-center px-8 sm:px-8 py-4 sm:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-400 hover:text-orange-500 dark:hover:text-orange-400 shadow-sm hover:shadow-md cursor-pointer"
-                  aria-label="Me contacter"
+                  :href="whatsappLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-base font-bold rounded-xl transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-400 hover:text-orange-500 dark:hover:text-orange-400 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap leading-none"
+                  aria-label="Contacter via WhatsApp"
                 >
-                  <span>Me contacter</span>
+                  <span class="whitespace-nowrap">Parler sur WhatsApp</span>
                 </a>
               </div>
             </Transition>
@@ -212,7 +213,7 @@
                 <span
                   class="flex items-center gap-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
                 >
-                  <span>Disponible pour échange constructif</span>
+                  <span>Réponse sous 24h en semaine</span>
                   <span>💬</span>
                 </span>
               </div>
@@ -305,9 +306,19 @@ const isVisible = ref(false)
 
 // Rôles avec classes
 const roles = [
-  { text: 'Tech Leader', class: 'text-slate-900 dark:text-white' },
-  { text: 'Innovateur', class: 'text-slate-900 dark:text-white' },
-  { text: 'Entrepreneur', class: 'text-slate-900 dark:text-white' },
+  {
+    text: 'Tech Business Builder',
+    class: 'text-slate-900 dark:text-white',
+  },
+  {
+    text: 'SaaS orienté ROI',
+    class: 'text-slate-900 dark:text-white',
+  },
+  {
+    text: 'Architecte de solutions digitales',
+    class: 'text-slate-900 dark:text-white',
+  },
+  { text: 'Ops & optimisation', class: 'text-slate-900 dark:text-white' },
 ]
 
 // Statistiques
@@ -316,6 +327,8 @@ const stats = [
   { value: '50+', label: 'Projets' },
   { value: '100%', label: 'Engagé' },
 ]
+
+const whatsappLink = 'https://wa.me/225767476595'
 
 // Fonction pour naviguer vers la section réalisations
 const scrollToRealisations = () => {

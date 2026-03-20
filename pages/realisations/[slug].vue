@@ -167,8 +167,71 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
         <!-- Colonne principale (2/3) -->
         <div class="lg:col-span-2 space-y-12">
-          <!-- Description -->
+          <!-- Description structurée (Problème -> Solution -> Bénéfice) -->
           <div
+            v-if="hasStructuredCopy"
+            class="space-y-8"
+          >
+            <div class="space-y-3">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-display">
+                Problème
+              </h2>
+              <ul class="list-disc pl-5 space-y-2 text-slate-700 dark:text-slate-300">
+                <li
+                  v-for="(item, idx) in (realisation.problem || [])"
+                  :key="idx"
+                >
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-display">
+                Solution
+              </h2>
+              <ul class="list-disc pl-5 space-y-2 text-slate-700 dark:text-slate-300">
+                <li
+                  v-for="(item, idx) in (realisation.solution || [])"
+                  :key="idx"
+                >
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-display">
+                Bénéfice
+              </h2>
+              <ul class="list-disc pl-5 space-y-2 text-slate-700 dark:text-slate-300">
+                <li
+                  v-for="(item, idx) in (realisation.benefit || [])"
+                  :key="idx"
+                >
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
+
+            <div v-if="realisation.kpis && realisation.kpis.length" class="space-y-3">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-display">
+                Preuves & KPI suivis
+              </h2>
+              <ul class="list-disc pl-5 space-y-2 text-slate-700 dark:text-slate-300">
+                <li
+                  v-for="(item, idx) in realisation.kpis"
+                  :key="idx"
+                >
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fallback (si le projet n'a pas de copy structurée) -->
+          <div
+            v-else
             class="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed"
             v-html="realisation.description"
           ></div>
@@ -425,6 +488,15 @@ const shortDescription = computed(() => {
   if (!realisation.value?.description) return ''
   const text = realisation.value.description.replace(/<[^>]+>/g, '')
   return text.length > 180 ? text.slice(0, 180).trimEnd() + '…' : text
+})
+
+const hasStructuredCopy = computed(() => {
+  const r = realisation.value
+  return !!(
+    (r.problem && r.problem.length) ||
+    (r.solution && r.solution.length) ||
+    (r.benefit && r.benefit.length)
+  )
 })
 
 const lightboxOpen = ref(false)

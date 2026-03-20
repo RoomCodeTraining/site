@@ -244,10 +244,10 @@
                     Email
                   </p>
                   <a
-                    href="mailto:contact@roomcodetraining.com"
+                    href="mailto:roomcodetraining@gmail.com"
                     class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200"
                   >
-                    contact@roomcodetraining.com
+                    roomcodetraining@gmail.com
                   </a>
                 </div>
               </div>

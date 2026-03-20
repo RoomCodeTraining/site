@@ -1,6 +1,7 @@
 <template>
   <Header />
   <Hero />
+  <BusinessHelp />
   <!-- Projets récents - Juste après le Hero -->
   <RecentProjects />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -17,6 +18,7 @@
 <script setup>
 import Header from '~/components/Header.vue'
 import Hero from '~/components/Hero.vue'
+import BusinessHelp from '~/components/BusinessHelp.vue'
 import RecentProjects from '~/components/RecentProjects.vue'
 import Cursus from '~/components/Cursus.vue'
 import Experience from '~/components/Experience.vue'

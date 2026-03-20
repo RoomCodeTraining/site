@@ -94,7 +94,8 @@ export const recentProjects: Realisation[] = [
     id: 1,
     type: 'Entreprenariat',
     title: 'WELINK CI',
-    description: 'Plateforme B2B innovante connectant les entreprises ivoiriennes avec annuaire géolocalisé, dashboard de gestion et système de mise en relation.',
+    description:
+      "Plateforme B2B pour connecter les commerces et pharmacies, fluidifier les réservations et aider les propriétaires à piloter l'activité.",
     technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
     main_image: welinkImage,
     images: welinkImages,
@@ -107,7 +108,7 @@ export const recentProjects: Realisation[] = [
     type: 'Entreprenariat',
     title: 'Baaro',
     description:
-      "Application web d'archives et de gestion de documents avec interface moderne et assistant IA, développée dans l'écosystème WeLink CI.",
+      "Archives & recherche documentaire avec assistant IA pour retrouver l'information plus vite et répondre plus efficacement.",
     technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
     main_image: baaroImage,
     images: baaroImages,
@@ -124,7 +125,26 @@ export const realisationsByCategory = {
       id: 1,
       type: 'Entreprenariat',
       title: 'WELINK CI',
-      description: 'Plateforme B2B innovante connectant les entreprises ivoiriennes. WELINK CI offre un annuaire intelligent de commerces et pharmacies géolocalisés, un dashboard de gestion complet pour les professionnels, et un système de mise en relation facilité. Les fonctionnalités incluent : recherche avancée par catégorie et localisation, fiches entreprises détaillées avec horaires et services, système d\'avis et notations, gestion des commandes et réservations, et analytics pour les propriétaires. Le projet répond au besoin de digitalisation des PME en Côte d\'Ivoire.',
+      description:
+        "Annuaire géolocalisé + mise en relation B2B : on réduit la friction côté client et on donne aux propriétaires une visibilité claire sur l'activité.",
+      problem: [
+        "Les clients perdent du temps à chercher l'information et à comprendre où réserver/commander.",
+        "Les demandes ne sont pas assez fluides : suivi, qualification et finalisation restent difficiles.",
+        "Les propriétaires manquent de visibilité pour piloter les conversions et prioriser les améliorations."
+      ],
+      solution: [
+        "Annuaire géolocalisé avec recherche avancée (catégorie + localisation).",
+        "Fiches entreprises complètes (horaires, services) + avis et notations.",
+        "Système de réservation/commande et dashboard propriétaire avec analytics."
+      ],
+      benefit: [
+        "Parcours plus direct : moins de friction, plus de chances de conversion.",
+        "Réservations/commandes mieux orchestrées : moins d'allers-retours côté client et équipes.",
+        "Décisions basées sur des données : KPI, tendances et points d'amélioration concrets."
+      ],
+      kpis: [
+        "KPI suivis : réservations/commandes, conversion par zone/catégorie, activité des fiches, avis & notations."
+      ],
       technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
       main_image: welinkImage,
       images: welinkImages,
@@ -137,7 +157,25 @@ export const realisationsByCategory = {
       type: 'Entreprenariat',
       title: 'Baaro',
       description:
-        "Application web d'archives et de gestion de documents pour organiser, stocker et interroger des fichiers (Word, PDF, images) avec un assistant IA spécialisé. L’interface propose un tableau de bord clair, une section Documents avec tags et métadonnées, un assistant IA pour poser des questions sur les contenus importés, et des paramètres adaptés aux besoins des équipes. Le projet s’inscrit dans la suite de solutions WeLink pour la digitalisation des entreprises africaines.",
+        "Archives & gestion documentaire : on transforme les fichiers en connaissance retrouvable et exploitable, via un assistant IA.",
+      problem: [
+        "Les documents sont dispersés (Word/PDF/images) : temps perdu pour retrouver la bonne version.",
+        "Il est difficile de retrouver une information précise sans relire plusieurs fichiers.",
+        "Réponses lentes et dépendance à quelques personnes qui savent où chercher."
+      ],
+      solution: [
+        "Organisation par tags et métadonnées pour retrouver vite et bien classer.",
+        "Tableau de bord et navigation claire dans les documents.",
+        "Assistant IA spécialisé pour interroger les contenus importés (trouver une réponse, pas seulement un fichier)."
+      ],
+      benefit: [
+        "Recherche accélérée : moins de temps passé à fouiller, plus de temps à exécuter.",
+        "Moins d'erreurs grâce à la traçabilité et la structure des contenus.",
+        "Réponses plus rapides pour les équipes : autonomie renforcée."
+      ],
+      kpis: [
+        "KPI suivis : temps de recherche, volume de requêtes IA, taux de résolution, satisfaction interne."
+      ],
       technologies: ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
       main_image: baaroImage,
       images: baaroImages,
@@ -150,7 +188,25 @@ export const realisationsByCategory = {
       type: 'SaaS',
       title: 'Ivoire Stock',
       description:
-        "Solution SaaS de gestion d'inventaire moderne pour PME et ETI, pensée pour la visibilité temps réel des stocks multi-entrepôts sans la complexité d’un ERP. Ivoire Stock permet de suivre les produits par entrepôt et par site, de tracer tous les mouvements (entrées, sorties, transferts) et d’analyser l’activité grâce à des tableaux de bord lisibles (produits actifs, alertes de stock bas, tendances des mouvements, capacité des entrepôts). L’application est conçue pour les équipes opérations et terrain : structure des produits par catégorie et emplacement, enregistrement simplifié des mouvements (prêt pour le scan code-barres), rapports exportables et scénarios d’usage pour la construction, les services IT, la logistique et les PME industrielles.",
+        "Inventaire multi-entrepôts : plus de visibilité, moins de ruptures, et des rapports actionnables pour décider vite.",
+      problem: [
+        "Stocks peu lisibles en multi-entrepôts : ruptures, surstocks et décisions tardives.",
+        "Traçabilité des mouvements insuffisante (entrées, sorties, transferts).",
+        "Rapports difficiles à exploiter côté opérationnel."
+      ],
+      solution: [
+        "Suivi des produits par entrepôt/site avec structure par catégorie et emplacement.",
+        "Traçabilité des mouvements (entrées, sorties, transferts) pensée pour les équipes terrain.",
+        "Tableaux de bord (actifs, alertes stock bas, tendances, capacité) + exports."
+      ],
+      benefit: [
+        "Visibilité temps réel pour mieux planifier et arbitrer.",
+        "Réduction des ruptures grâce aux alertes de stock bas et aux écarts suivis.",
+        "Efficacité opérationnelle : saisie simplifiée et données plus fiables."
+      ],
+      kpis: [
+        "KPI suivis : alertes stock bas, écarts stock théorique vs réel, rotation, volume de mouvements."
+      ],
       technologies: ['Laravel', 'Vue.js', 'TailwindCSS', 'MySQL'],
       main_image: ivoireStockImage,
       images: ivoireStockImages,
