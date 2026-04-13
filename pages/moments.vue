@@ -218,6 +218,10 @@ import myavatar from '~/assets/images/moments/myavatar.jpeg'
 import moment1747830225745 from '~/assets/images/moments/1747830225745.jpeg'
 import fanaf1 from '~/assets/images/moments/fanaf1.jpeg'
 import fanaf2 from '~/assets/images/moments/fanaf2.jpeg'
+import gitex1 from '~/assets/images/moments/photo_2026-04-13 15.19.44.jpeg'
+import gitex2 from '~/assets/images/moments/photo_2026-04-13 15.19.51.jpeg'
+import gitex3 from '~/assets/images/moments/photo_2026-04-13 15.20.10.jpeg'
+import gitex4 from '~/assets/images/moments/photo_2026-04-13 15.20.39.jpeg'
 
 interface Moment {
   image: string
@@ -367,6 +371,30 @@ moments.value = [
     image: fanaf2,
     title: 'FANAF 2026',
     description: "Événement en Côte d'Ivoire",
+    date: '2026',
+  },
+  {
+    image: gitex1,
+    title: 'GITEX AFRICA 2026',
+    description: 'Participation à GITEX Africa',
+    date: '2026',
+  },
+  {
+    image: gitex2,
+    title: 'GITEX AFRICA 2026',
+    description: 'Rencontres & échanges',
+    date: '2026',
+  },
+  {
+    image: gitex3,
+    title: 'GITEX AFRICA 2026',
+    description: 'Immersion dans l’écosystème tech',
+    date: '2026',
+  },
+  {
+    image: gitex4,
+    title: 'GITEX AFRICA 2026',
+    description: 'Moments forts',
     date: '2026',
   },
 ]
