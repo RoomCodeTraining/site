@@ -131,7 +131,7 @@
                   />
                 </svg>
                 <NuxtLink
-                  to="/#realisations"
+                  to="/realisations"
                   class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
                 >
                   Réalisations
@@ -350,7 +350,7 @@
 
               <!-- Bouton retour -->
               <NuxtLink
-                to="/#realisations"
+                to="/realisations"
                 class="inline-flex items-center justify-center w-full gap-2 px-6 py-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl transition-all duration-200 group"
               >
                 <svg

@@ -18,142 +18,8 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-        <!-- Formulaire de contact -->
-        <div
-          class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200 dark:border-slate-800"
-        >
-          <h2
-            class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 font-display"
-          >
-            Envoyez-moi un message
-          </h2>
-
-          <form @submit.prevent="submitForm" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label
-                  for="firstName"
-                  class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
-                >
-                  Prénom *
-                </label>
-                <input
-                  id="firstName"
-                  v-model="form.firstName"
-                  type="text"
-                  required
-                  class="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-slate-800 dark:text-white transition-all duration-200"
-                  placeholder="Votre prénom"
-                />
-              </div>
-              <div>
-                <label
-                  for="lastName"
-                  class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
-                >
-                  Nom *
-                </label>
-                <input
-                  id="lastName"
-                  v-model="form.lastName"
-                  type="text"
-                  required
-                  class="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-slate-800 dark:text-white transition-all duration-200"
-                  placeholder="Votre nom"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
-              >
-                Email *
-              </label>
-              <input
-                id="email"
-                v-model="form.email"
-                type="email"
-                required
-                class="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-slate-800 dark:text-white transition-all duration-200"
-                placeholder="votre@email.com"
-              />
-            </div>
-
-            <div>
-              <label
-                for="subject"
-                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
-              >
-                Sujet *
-              </label>
-              <select
-                id="subject"
-                v-model="form.subject"
-                required
-                class="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-slate-800 dark:text-white transition-all duration-200"
-              >
-                <option value="">Choisissez un sujet</option>
-                <option value="formation">Formation & Coaching</option>
-                <option value="projet">Projet de développement</option>
-                <option value="consultation">Consultation technique</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-
-            <div>
-              <label
-                for="message"
-                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
-              >
-                Message *
-              </label>
-              <textarea
-                id="message"
-                v-model="form.message"
-                rows="6"
-                required
-                class="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-slate-800 dark:text-white transition-all duration-200 resize-none"
-                placeholder="Décrivez votre projet ou votre demande..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              :disabled="isSubmitting"
-              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              <svg
-                v-if="isSubmitting"
-                class="animate-spin h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  class="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  stroke-width="4"
-                ></circle>
-                <path
-                  class="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              <span v-if="isSubmitting">Envoi en cours...</span>
-              <span v-else>Envoyer le message</span>
-            </button>
-          </form>
-        </div>
-
+      <div class="max-w-4xl mx-auto space-y-8">
         <!-- Informations de contact -->
-        <div class="space-y-8">
           <!-- Présentation -->
           <div
             class="bg-slate-900 dark:bg-slate-800 rounded-3xl p-6 sm:p-8 text-white"
@@ -221,6 +87,38 @@
               Mes coordonnées
             </h3>
             <div class="space-y-4 sm:space-y-6">
+              <div class="flex items-center gap-3 sm:gap-4">
+                <div
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-slate-700 dark:text-slate-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900 dark:text-white mb-1">
+                    Téléphone
+                  </p>
+                  <a
+                    :href="`tel:${phoneE164}`"
+                    class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200"
+                  >
+                    {{ phoneDisplay }}
+                  </a>
+                </div>
+              </div>
+
               <div class="flex items-center gap-3 sm:gap-4">
                 <div
                   class="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -326,41 +224,34 @@
               <h4
                 class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white mb-3 sm:mb-4"
               >
-                Suivez-moi
+                Actions rapides
               </h4>
-              <div class="flex gap-2 sm:gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
-                  href="https://www.linkedin.com/in/dasieroger/"
+                  :href="linkedinUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-12 h-12 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-orange-500 dark:hover:text-orange-400 transition-all duration-200"
-                  aria-label="LinkedIn"
+                  class="h-12 px-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white rounded-xl flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-200 font-semibold"
                 >
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
                     />
                   </svg>
+                  <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com/roomdada"
+                  :href="whatsappUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-12 h-12 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-orange-500 dark:hover:text-orange-400 transition-all duration-200"
-                  aria-label="GitHub"
+                  class="h-12 px-4 bg-orange-500 text-white rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition-all duration-200 font-semibold"
                 >
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      fill-rule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                  <span aria-hidden="true">WhatsApp</span>
+                  <span class="sr-only">Contacter via WhatsApp</span>
                 </a>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -371,42 +262,11 @@
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 
-const form = ref({
-  firstName: '',
-  lastName: '',
-  email: '',
-  subject: '',
-  message: '',
-})
+const linkedinUrl = 'https://www.linkedin.com/in/dasieroger/'
+const whatsappUrl = 'https://wa.me/225767476595'
 
-const isSubmitting = ref(false)
-
-const submitForm = async () => {
-  isSubmitting.value = true
-
-  try {
-    // Simulation d'envoi (remplacer par votre logique d'envoi)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    // Reset du formulaire
-    form.value = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      subject: '',
-      message: '',
-    }
-
-    // Message de succès (vous pouvez utiliser une notification)
-    alert(
-      'Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
-    )
-  } catch (error) {
-    alert("Erreur lors de l'envoi du message. Veuillez réessayer.")
-  } finally {
-    isSubmitting.value = false
-  }
-}
+const phoneE164 = '+22567476595'
+const phoneDisplay = '+225 07 67 47 65 95'
 </script>
 
 <style scoped>

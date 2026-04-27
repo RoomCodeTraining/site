@@ -242,11 +242,10 @@ const activeSection = ref('')
 
 // Navigation items - simplified according to mockup
 const navItems = [
-  { title: 'Réalisations', link: '#realisations', type: 'section' },
+  { title: 'Réalisations', link: '/realisations', type: 'page' },
   { title: 'Blog', link: '/blog', type: 'page' },
   { title: 'Moments', link: '/moments', type: 'page' },
   { title: 'Packages', link: '/packages', type: 'page' },
-  { title: 'Backstage', link: '/backstage', type: 'page' },
 ]
 
 // All items visible on desktop
