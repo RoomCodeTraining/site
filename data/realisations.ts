@@ -37,6 +37,19 @@ import ivoireStockRegister from '~/assets/images/projects/ivoirestock/register.p
 import ivoireStockLogin from '~/assets/images/projects/ivoirestock/login.png'
 import ivoireStockMouvement from '~/assets/images/projects/ivoirestock/mouvement.png'
 
+// Import des images Delyo
+import delyoHero from '~/assets/images/projects/delyo/delyohero.png'
+import delyoVendorDashboard from '~/assets/images/projects/delyo/vendordashbord.png'
+import delyoVendorSettings from '~/assets/images/projects/delyo/delyovendorsetting.png'
+import delyoApiDocs from '~/assets/images/projects/delyo/apidocs.png'
+import delyoDeliveriesList from '~/assets/images/projects/delyo/deliverieslist.png'
+
+// Import des images Food Pro
+import foodProHero from '~/assets/images/projects/foodpro/foodprohero.png'
+import foodProRestoDash from '~/assets/images/projects/foodpro/foodprorestodash.png'
+import foodProLogin from '~/assets/images/projects/foodpro/foodprologin.png'
+import foodProReporting from '~/assets/images/projects/foodpro/foodreporting.png'
+
 // Images WELINK
 const welinkImage = welinkLanding
 const welinkImages = [
@@ -88,8 +101,53 @@ const asaControllerImage = asaControllerMain
 const letextoImage = smsMain
 const paymentImage = paymentMain
 
+// Images Delyo
+const delyoImage = delyoHero
+const delyoImages = [
+  delyoHero,
+  delyoVendorDashboard,
+  delyoDeliveriesList,
+  delyoApiDocs,
+  delyoVendorSettings,
+]
+
+// Images Food Pro
+const foodProImage = foodProHero
+const foodProImages = [
+  foodProHero,
+  foodProRestoDash,
+  foodProReporting,
+  foodProLogin,
+]
+
 // Projets récents (pour RecentProjects)
 export const recentProjects: Realisation[] = [
+  {
+    id: 9,
+    type: 'SaaS',
+    title: 'Delyo',
+    description:
+      "Infrastructure de livraison pour l'Afrique : express & planifiée, API vendeurs, dispatch intelligent et suivi temps réel.",
+    technologies: ['Laravel', 'API REST', 'Redis', 'WebSockets', 'Mobile'],
+    main_image: delyoImage,
+    images: delyoImages,
+    slug: 'delyo',
+    application_link: 'https://getdelyo.com',
+    isPublic: true,
+  },
+  {
+    id: 10,
+    type: 'SaaS',
+    title: 'Food Pro',
+    description:
+      "Plateforme B2B pour les équipes en bureau : découvrir les restaurants autour du lieu de travail et commander rapidement.",
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Géolocalisation'],
+    main_image: foodProImage,
+    images: foodProImages,
+    slug: 'food-pro',
+    application_link: 'https://foodpro.welink-ci.com/',
+    isPublic: true,
+  },
   {
     id: 1,
     type: 'Entreprenariat',
@@ -121,6 +179,68 @@ export const recentProjects: Realisation[] = [
 // Réalisations organisées par catégories
 export const realisationsByCategory = {
   'Entreprenariat': [
+    {
+      id: 9,
+      type: 'SaaS',
+      title: 'Delyo',
+      description:
+        "SaaS de livraison pour l'Afrique : express et planifiée, avec API pour vendeurs, dispatch intelligent et suivi temps réel. Marque courte, B2B, pensée comme une infrastructure régionale.",
+      problem: [
+        "Les vendeurs et marketplaces manquent d'une couche logistique unifiée, fiable et intégrable par API.",
+        "Dispatch manuel, peu de visibilité sur les courses et retards difficiles à expliquer au client final.",
+        "Peu d'outils adaptés au contexte africain (mobile money, réseaux, densité urbaine variable).",
+      ],
+      solution: [
+        "Plateforme SaaS B2B + API : création de courses express ou planifiées depuis les systèmes partenaires.",
+        "Dispatch intelligent (affectation, priorités) et suivi temps réel pour vendeurs, livreurs et ops.",
+        "Apps et dashboards pour piloter la flotte, les SLA et la relation client.",
+      ],
+      benefit: [
+        "Time-to-market réduit pour lancer ou externaliser la livraison sans reconstruire toute la stack.",
+        "Expérience client plus prévisible grâce au suivi et aux notifications en temps réel.",
+        "Scalabilité régionale : un socle unique pour plusieurs pays et verticales.",
+      ],
+      kpis: [
+        "KPI suivis : délai moyen de livraison, taux de courses à l'heure, taux d'acceptation dispatch, NPS vendeur.",
+      ],
+      technologies: ['Laravel', 'API REST', 'Redis', 'Queues', 'WebSockets', 'Flutter'],
+      main_image: delyoImage,
+      images: delyoImages,
+      slug: 'delyo',
+      application_link: 'https://getdelyo.com',
+      isPublic: true,
+    },
+    {
+      id: 10,
+      type: 'SaaS',
+      title: 'Food Pro',
+      description:
+        "Plateforme pour les employés : retrouver les restaurants autour du bureau et commander rapidement, sans friction.",
+      problem: [
+        "À l'heure du déjeuner, les équipes perdent du temps à chercher où commander près du bureau.",
+        "Peu de visibilité sur les restaurants partenaires, délais et options disponibles par site.",
+        "Les entreprises veulent centraliser ou simplifier la commande collective sans process lourd.",
+      ],
+      solution: [
+        "Carte et liste des restaurants à proximité du lieu de travail, filtrés par distance et disponibilité.",
+        "Parcours de commande rapide, pensé mobile-first pour les employés.",
+        "Espace entreprise pour ancrer les sites de bureau et les préférences d'équipe.",
+      ],
+      benefit: [
+        "Gain de temps quotidien pour les collaborateurs.",
+        "Meilleure adoption des partenaires resto autour des zones d'activité.",
+        "Données utiles pour les RH / office managers (volumes, tendances).",
+      ],
+      kpis: [
+        "KPI suivis : commandes par site, délai moyen, restaurants actifs par zone, taux de réachat.",
+      ],
+      technologies: ['Laravel', 'Vue.js', 'Nuxt', 'MySQL', 'Maps API', 'TailwindCSS'],
+      main_image: foodProImage,
+      images: foodProImages,
+      slug: 'food-pro',
+      application_link: 'https://foodpro.welink-ci.com/',
+      isPublic: true,
+    },
     {
       id: 1,
       type: 'Entreprenariat',
